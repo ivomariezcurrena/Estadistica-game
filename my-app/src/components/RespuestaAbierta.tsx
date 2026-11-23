@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Pregunta } from "@/types";
 import Markdown from "./Markdown";
+import { registrarRespuesta } from "@/lib/storage";
 
 // Pregunta abierta: escribís tu respuesta, ves la respuesta modelo y marcás
 // qué puntos clave cubriste (autoevaluación).
@@ -11,7 +12,19 @@ export default function RespuestaAbierta({ pregunta }: { pregunta: Pregunta }) {
   const [mostrada, setMostrada] = useState(false);
   const [cubiertos, setCubiertos] = useState<boolean[]>(() => pregunta.puntosClave.map(() => false));
 
+  // null = todavía no se registró; si no, si contó como acierto.
+  const [resultado, setResultado] = useState<boolean | null>(null);
+  const [esReintento, setEsReintento] = useState(false);
+
   const cantidad = cubiertos.filter(Boolean).length;
+  const todos = cantidad === pregunta.puntosClave.length;
+
+  // Cuenta como acierto si se cubrieron todos los puntos clave.
+  // Solo se registra el primer intento; los reintentos son de práctica.
+  function registrar() {
+    registrarRespuesta(pregunta.id, todos);
+    setResultado(todos);
+  }
 
   function alternar(i: number) {
     setCubiertos((prev) => prev.map((v, j) => (j === i ? !v : v)));
@@ -21,6 +34,7 @@ export default function RespuestaAbierta({ pregunta }: { pregunta: Pregunta }) {
     setTexto("");
     setMostrada(false);
     setCubiertos(pregunta.puntosClave.map(() => false));
+    if (resultado !== null) setEsReintento(true);
   }
 
   return (
@@ -76,8 +90,26 @@ export default function RespuestaAbierta({ pregunta }: { pregunta: Pregunta }) {
             </div>
           )}
 
-          <button type="button" onClick={reiniciar} className="text-sm text-blue-700 underline">
-            Volver a intentar
+          {resultado === null ? (
+            <button
+              type="button"
+              onClick={registrar}
+              className="rounded bg-blue-600 px-4 py-2 text-sm text-white hover:bg-blue-700"
+            >
+              Guardar autoevaluación
+            </button>
+          ) : esReintento ? (
+            <p className="text-sm text-zinc-500">Intento de práctica: no se guarda en el progreso.</p>
+          ) : (
+            <p className={`text-sm font-semibold ${resultado ? "text-green-700" : "text-red-700"}`}>
+              {resultado
+                ? "Guardado como acierto."
+                : "Guardado como fallo: para que cuente como acierto tenés que cubrir todos los puntos clave."}
+            </p>
+          )}
+
+          <button type="button" onClick={reiniciar} className="block text-sm text-blue-700 underline">
+            Volver a intentar{resultado !== null && " (no se guarda)"}
           </button>
         </div>
       )}

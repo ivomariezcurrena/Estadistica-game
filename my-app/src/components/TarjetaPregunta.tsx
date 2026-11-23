@@ -5,11 +5,23 @@ import type { Pregunta } from "@/types";
 import Markdown from "./Markdown";
 import RespuestaAbierta from "./RespuestaAbierta";
 import { NOMBRE_TEMA } from "@/lib/temas";
+import { registrarRespuesta, useProgreso } from "@/lib/storage";
 
 export default function TarjetaPregunta({ pregunta }: { pregunta: Pregunta }) {
   const [elegida, setElegida] = useState<string | null>(null);
+  // Solo cuenta para el progreso el primer intento; los reintentos son de práctica.
+  const [registrada, setRegistrada] = useState(false);
+  const progreso = useProgreso()[pregunta.id];
   const respondida = elegida !== null;
   const acerto = elegida === pregunta.respuestaCorrecta;
+
+  function elegir(opcionId: string) {
+    setElegida(opcionId);
+    if (!registrada) {
+      registrarRespuesta(pregunta.id, opcionId === pregunta.respuestaCorrecta);
+      setRegistrada(true);
+    }
+  }
 
   return (
     <article className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm">
@@ -18,6 +30,12 @@ export default function TarjetaPregunta({ pregunta }: { pregunta: Pregunta }) {
         <span className="rounded bg-zinc-100 px-2 py-0.5 text-zinc-700">Nivel {pregunta.nivel}</span>
         {!pregunta.revisada && (
           <span className="rounded bg-amber-100 px-2 py-0.5 text-amber-800">Sin revisar</span>
+        )}
+        {progreso && (
+          <span className="ml-auto text-zinc-500">
+            {progreso.aciertos} {progreso.aciertos === 1 ? "acierto" : "aciertos"} · {progreso.fallos}{" "}
+            {progreso.fallos === 1 ? "fallo" : "fallos"}
+          </span>
         )}
       </div>
 
@@ -37,7 +55,7 @@ export default function TarjetaPregunta({ pregunta }: { pregunta: Pregunta }) {
                   <button
                     type="button"
                     disabled={respondida}
-                    onClick={() => setElegida(op.id)}
+                    onClick={() => elegir(op.id)}
                     className={`w-full rounded border px-3 py-2 text-left ${estilo} disabled:cursor-default`}
                   >
                     <span className="mr-2 font-semibold">{op.id})</span>
@@ -61,7 +79,7 @@ export default function TarjetaPregunta({ pregunta }: { pregunta: Pregunta }) {
                 onClick={() => setElegida(null)}
                 className="mt-3 text-sm text-blue-700 underline"
               >
-                Volver a intentar
+                Volver a intentar (no se guarda)
               </button>
             </div>
           )}
