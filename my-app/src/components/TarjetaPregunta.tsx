@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Pregunta } from "@/types";
 import Markdown from "./Markdown";
+import RespuestaAbierta from "./RespuestaAbierta";
 import { NOMBRE_TEMA } from "@/lib/temas";
 
 export default function TarjetaPregunta({ pregunta }: { pregunta: Pregunta }) {
@@ -66,9 +67,7 @@ export default function TarjetaPregunta({ pregunta }: { pregunta: Pregunta }) {
           )}
         </>
       ) : (
-        <p className="text-sm italic text-zinc-500">
-          Pregunta abierta: responderlas va a estar disponible en la próxima fase.
-        </p>
+        <RespuestaAbierta pregunta={pregunta} />
       )}
 
       <p className="mt-4 text-xs text-zinc-400">Fuente: {pregunta.fuente}</p>
