@@ -1,0 +1,133 @@
+[
+  {
+    "id": "desc-001",
+    "tema": "descriptiva",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "En un estudio sobre rendimiento de combustible, la media fue $27{,}5$ millas por galón y la mediana $26$. El mínimo fue $13$, el máximo $50$, y los cuartiles $Q_1 = 18$ y $Q_3 = 36$. ¿Cómo es la distribución?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Simétrica, porque la media y la mediana son parecidas."
+      },
+      {
+        "id": "b",
+        "texto": "Con sesgo positivo (a la derecha)."
+      },
+      {
+        "id": "c",
+        "texto": "Con sesgo negativo (a la izquierda)."
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "Tiene sesgo positivo: la media es mayor que la mediana y la parte derecha de la caja y el bigote derecho son más largos que los izquierdos.",
+    "puntosClave": [],
+    "explicacion": "La media ($27{,}5$) es mayor que la mediana ($26$). Además $Q_3 - Q_2 = 10 > Q_2 - Q_1 = 8$ y $\\text{máx} - Q_3 = 14 > Q_1 - \\text{mín} = 5$: los datos se estiran hacia los valores altos. El rango intercuartil es $RIC = Q_3 - Q_1 = 36 - 18 = 18$.",
+    "fuente": "Final 2022, Ej. 1c",
+    "revisada": false
+  },
+  {
+    "id": "tcl-001",
+    "tema": "muestreo-tcl",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Una población **no normal** tiene $\\mu = 100$ y $\\sigma = 21$. Se extrae una muestra de $n = 49$. ¿Cuánto vale $P(94 < \\bar{X} < 106)$?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Aproximadamente $0{,}2249$"
+      },
+      {
+        "id": "b",
+        "texto": "Aproximadamente $0{,}9544$"
+      },
+      {
+        "id": "c",
+        "texto": "Aproximadamente $0{,}9772$"
+      },
+      {
+        "id": "d",
+        "texto": "No se puede calcular porque la población no es normal."
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "Por el TCL, con $n = 49$ la media muestral es aproximadamente normal con media $100$ y error estándar $\\sigma_{\\bar{X}} = 21/\\sqrt{49} = 3$. Entonces $P(94 < \\bar{X} < 106) = P(-2 < Z < 2) \\approx 0{,}9544$.",
+    "puntosClave": [],
+    "explicacion": "Como $n = 49$ es grande, el **Teorema Central del Límite** permite aproximar $\\bar{X} \\sim N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right)$ aunque la población no sea normal.\n\n$$\n\\sigma_{\\bar{X}} = \\frac{21}{\\sqrt{49}} = 3 \\qquad z = \\frac{106 - 100}{3} = 2\n$$\n\n$$\nP(-2 < Z < 2) = 0{,}9772 - 0{,}0228 \\approx 0{,}9544\n$$\n\nLa opción $0{,}2249$ sale de usar $\\sigma = 21$ en lugar del error estándar, y $0{,}9772$ es solo $P(Z < 2)$.",
+    "fuente": "Final 2022, Ej. 2b",
+    "revisada": false
+  },
+  {
+    "id": "th-001",
+    "tema": "test-hipotesis",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "Un estudio clínico concluye que un fármaco es más efectivo que un placebo con $p = 0{,}03$. ¿Cuál es la interpretación correcta?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "El tratamiento es un 97% más efectivo que el placebo."
+      },
+      {
+        "id": "b",
+        "texto": "La probabilidad de que el placebo sea mejor que el fármaco es de 0,03."
+      },
+      {
+        "id": "c",
+        "texto": "Si el tratamiento no fuese efectivo, existe una probabilidad de 0,03 de observar una muestra tan contraria a dicha hipótesis como la obtenida."
+      }
+    ],
+    "respuestaCorrecta": "c",
+    "respuestaModelo": "El p-valor es la probabilidad, suponiendo $H_0$ verdadera, de obtener un resultado tan extremo o más que el observado.",
+    "puntosClave": [],
+    "explicacion": "El p-valor se calcula **suponiendo que $H_0$ es verdadera** (el fármaco no es efectivo). No es la probabilidad de que una hipótesis sea cierta ni mide el tamaño del efecto.",
+    "fuente": "Final 2022, Ej. 4",
+    "revisada": false
+  },
+  {
+    "id": "poi-001",
+    "tema": "poisson",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Un servidor recibe en promedio 12 solicitudes por minuto, de manera aleatoria. Si $X$ es la cantidad de solicitudes recibidas en **30 segundos**, ¿qué distribución sigue $X$?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$X \\sim \\text{Poisson}(\\lambda = 12)$"
+      },
+      {
+        "id": "b",
+        "texto": "$X \\sim \\text{Poisson}(\\lambda = 6)$"
+      },
+      {
+        "id": "c",
+        "texto": "$X \\sim \\text{Poisson}(\\lambda = 24)$"
+      },
+      {
+        "id": "d",
+        "texto": "$X \\sim \\text{Binomial}(n = 12, p = 0{,}5)$"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "$X \\sim \\text{Poisson}(\\lambda = 6)$, porque la tasa es proporcional a la longitud del intervalo: $12 \\cdot 0{,}5 = 6$.",
+    "puntosClave": [],
+    "explicacion": "En un proceso de Poisson la tasa media es proporcional a la longitud del intervalo: $\\lambda = 12 \\,\\tfrac{\\text{sol}}{\\text{min}} \\cdot 0{,}5 \\text{ min} = 6$.\n\n$$\nP(X = k) = \\frac{e^{-\\lambda}\\,\\lambda^k}{k!}\n$$",
+    "fuente": "Final 2026, Ej. 3a",
+    "revisada": false
+  },
+  {
+    "id": "prob-001",
+    "tema": "probabilidad",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "En una tabla de probabilidades conjuntas falta una celda. ¿Cómo la obtenés y por qué en $P(\\text{No apto} \\mid \\text{Rechazada})$ se divide por $P(\\text{Rechazada})$ y no por 1?",
+    "respuestaModelo": "Las cuatro celdas de la tabla conjunta suman 1, así que la celda faltante es 1 menos la suma de las otras tres. Al condicionar por Rechazada se reduce el espacio muestral a las muestras rechazadas, por eso se divide por $P(\\text{Rechazada})$.",
+    "puntosClave": [
+      "Las probabilidades conjuntas suman 1",
+      "$P(A \\mid B) = \\dfrac{P(A \\cap B)}{P(B)}$",
+      "Condicionar reduce el espacio muestral al evento B"
+    ],
+    "fuente": "Final 2026, Ej. 1a",
+    "revisada": false
+  }
+]
