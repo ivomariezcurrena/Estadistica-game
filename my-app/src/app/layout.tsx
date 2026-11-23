@@ -14,6 +14,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full bg-zinc-50 text-zinc-900">
         <nav className="border-b border-zinc-200 bg-white">
           <div className="mx-auto flex max-w-3xl gap-6 px-4 py-3 text-sm">
+            <Link href="/juego" className="font-semibold hover:underline">
+              Juego
+            </Link>
             <Link href="/" className="hover:underline">
               Estudio
             </Link>

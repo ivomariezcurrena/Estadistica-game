@@ -38,7 +38,7 @@ export default function Estadisticas({ preguntas }: { preguntas: Pregunta[] }) {
   const total = calcular("Total", preguntas);
 
   function borrar() {
-    if (confirm("¿Borrar todo el progreso guardado? No se puede deshacer.")) borrarProgreso();
+    if (confirm("¿Borrar todo el progreso guardado, incluidos los niveles del juego? No se puede deshacer.")) borrarProgreso();
   }
 
   return (

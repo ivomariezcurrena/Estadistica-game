@@ -7,7 +7,14 @@ import { registrarRespuesta } from "@/lib/storage";
 
 // Pregunta abierta: escribís tu respuesta, ves la respuesta modelo y marcás
 // qué puntos clave cubriste (autoevaluación).
-export default function RespuestaAbierta({ pregunta }: { pregunta: Pregunta }) {
+// En el juego se pasa `onResultado` para avisar el resultado; ahí no se ofrece reintentar.
+export default function RespuestaAbierta({
+  pregunta,
+  onResultado,
+}: {
+  pregunta: Pregunta;
+  onResultado?: (acerto: boolean) => void;
+}) {
   const [texto, setTexto] = useState("");
   const [mostrada, setMostrada] = useState(false);
   const [cubiertos, setCubiertos] = useState<boolean[]>(() => pregunta.puntosClave.map(() => false));
@@ -24,6 +31,7 @@ export default function RespuestaAbierta({ pregunta }: { pregunta: Pregunta }) {
   function registrar() {
     registrarRespuesta(pregunta.id, todos);
     setResultado(todos);
+    onResultado?.(todos);
   }
 
   function alternar(i: number) {
@@ -77,6 +85,7 @@ export default function RespuestaAbierta({ pregunta }: { pregunta: Pregunta }) {
                         type="checkbox"
                         checked={cubiertos[i]}
                         onChange={() => alternar(i)}
+                        disabled={resultado !== null && !esReintento}
                         className="mt-1"
                       />
                       <Markdown inline>{punto}</Markdown>
@@ -96,9 +105,9 @@ export default function RespuestaAbierta({ pregunta }: { pregunta: Pregunta }) {
               onClick={registrar}
               className="rounded bg-blue-600 px-4 py-2 text-sm text-white hover:bg-blue-700"
             >
-              Guardar autoevaluación
+              {onResultado ? "Comprobar" : "Guardar autoevaluación"}
             </button>
-          ) : esReintento ? (
+          ) : onResultado ? null : esReintento ? (
             <p className="text-sm text-zinc-500">Intento de práctica: no se guarda en el progreso.</p>
           ) : (
             <p className={`text-sm font-semibold ${resultado ? "text-green-700" : "text-red-700"}`}>
@@ -108,9 +117,11 @@ export default function RespuestaAbierta({ pregunta }: { pregunta: Pregunta }) {
             </p>
           )}
 
-          <button type="button" onClick={reiniciar} className="block text-sm text-blue-700 underline">
-            Volver a intentar{resultado !== null && " (no se guarda)"}
-          </button>
+          {!onResultado && (
+            <button type="button" onClick={reiniciar} className="block text-sm text-blue-700 underline">
+              Volver a intentar{resultado !== null && " (no se guarda)"}
+            </button>
+          )}
         </div>
       )}
     </div>

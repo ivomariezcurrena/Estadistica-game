@@ -5,7 +5,8 @@ import type { Progreso } from "@/types";
 export type MapaProgreso = Record<string, Progreso>;
 
 const CLAVE = "estadistica-progreso";
-const EVENTO = "progreso-actualizado";
+export const CLAVE_JUEGO = "estadistica-juego";
+export const EVENTO = "progreso-actualizado";
 
 function leer(): MapaProgreso {
   try {
@@ -37,12 +38,14 @@ export function registrarRespuesta(preguntaId: string, acerto: boolean) {
   escribir(mapa);
 }
 
+// Borra el progreso de las preguntas y los niveles superados del juego.
 export function borrarProgreso() {
   localStorage.removeItem(CLAVE);
+  localStorage.removeItem(CLAVE_JUEGO);
   window.dispatchEvent(new Event(EVENTO));
 }
 
-function suscribir(avisar: () => void) {
+export function suscribir(avisar: () => void) {
   window.addEventListener(EVENTO, avisar);
   window.addEventListener("storage", avisar); // cambios desde otra pestaña
   return () => {

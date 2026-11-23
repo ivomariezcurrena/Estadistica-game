@@ -12,14 +12,14 @@
       },
       {
         "id": "b",
-        "texto": "Con sesgo positivo (a la derecha)."
+        "texto": "Con sesgo negativo (a la izquierda)."
       },
       {
         "id": "c",
-        "texto": "Con sesgo negativo (a la izquierda)."
+        "texto": "Con sesgo positivo (a la derecha)."
       }
     ],
-    "respuestaCorrecta": "b",
+    "respuestaCorrecta": "c",
     "respuestaModelo": "Tiene sesgo positivo: la media es mayor que la mediana y la parte derecha de la caja y el bigote derecho son más largos que los izquierdos.",
     "puntosClave": [],
     "explicacion": "La media ($27{,}5$) es mayor que la mediana ($26$). Además $Q_3 - Q_2 = 10 > Q_2 - Q_1 = 8$ y $\\text{máx} - Q_3 = 14 > Q_1 - \\text{mín} = 5$: los datos se estiran hacia los valores altos. El rango intercuartil es $RIC = Q_3 - Q_1 = 36 - 18 = 18$.",
@@ -35,22 +35,22 @@
     "opciones": [
       {
         "id": "a",
-        "texto": "Aproximadamente $0{,}2249$"
+        "texto": "No se puede calcular porque la población no es normal."
       },
       {
         "id": "b",
-        "texto": "Aproximadamente $0{,}9544$"
-      },
-      {
-        "id": "c",
         "texto": "Aproximadamente $0{,}9772$"
       },
       {
+        "id": "c",
+        "texto": "Aproximadamente $0{,}9544$"
+      },
+      {
         "id": "d",
-        "texto": "No se puede calcular porque la población no es normal."
+        "texto": "Aproximadamente $0{,}2249$"
       }
     ],
-    "respuestaCorrecta": "b",
+    "respuestaCorrecta": "c",
     "respuestaModelo": "Por el TCL, con $n = 49$ la media muestral es aproximadamente normal con media $100$ y error estándar $\\sigma_{\\bar{X}} = 21/\\sqrt{49} = 3$. Entonces $P(94 < \\bar{X} < 106) = P(-2 < Z < 2) \\approx 0{,}9544$.",
     "puntosClave": [],
     "explicacion": "Como $n = 49$ es grande, el **Teorema Central del Límite** permite aproximar $\\bar{X} \\sim N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right)$ aunque la población no sea normal.\n\n$$\n\\sigma_{\\bar{X}} = \\frac{21}{\\sqrt{49}} = 3 \\qquad z = \\frac{106 - 100}{3} = 2\n$$\n\n$$\nP(-2 < Z < 2) = 0{,}9772 - 0{,}0228 \\approx 0{,}9544\n$$\n\nLa opción $0{,}2249$ sale de usar $\\sigma = 21$ en lugar del error estándar, y $0{,}9772$ es solo $P(Z < 2)$.",
@@ -66,11 +66,11 @@
     "opciones": [
       {
         "id": "a",
-        "texto": "El tratamiento es un 97% más efectivo que el placebo."
+        "texto": "La probabilidad de que el placebo sea mejor que el fármaco es de 0,03."
       },
       {
         "id": "b",
-        "texto": "La probabilidad de que el placebo sea mejor que el fármaco es de 0,03."
+        "texto": "El tratamiento es un 97% más efectivo que el placebo."
       },
       {
         "id": "c",
@@ -93,22 +93,22 @@
     "opciones": [
       {
         "id": "a",
-        "texto": "$X \\sim \\text{Poisson}(\\lambda = 12)$"
-      },
-      {
-        "id": "b",
         "texto": "$X \\sim \\text{Poisson}(\\lambda = 6)$"
       },
       {
-        "id": "c",
+        "id": "b",
         "texto": "$X \\sim \\text{Poisson}(\\lambda = 24)$"
+      },
+      {
+        "id": "c",
+        "texto": "$X \\sim \\text{Poisson}(\\lambda = 12)$"
       },
       {
         "id": "d",
         "texto": "$X \\sim \\text{Binomial}(n = 12, p = 0{,}5)$"
       }
     ],
-    "respuestaCorrecta": "b",
+    "respuestaCorrecta": "a",
     "respuestaModelo": "$X \\sim \\text{Poisson}(\\lambda = 6)$, porque la tasa es proporcional a la longitud del intervalo: $12 \\cdot 0{,}5 = 6$.",
     "puntosClave": [],
     "explicacion": "En un proceso de Poisson la tasa media es proporcional a la longitud del intervalo: $\\lambda = 12 \\,\\tfrac{\\text{sol}}{\\text{min}} \\cdot 0{,}5 \\text{ min} = 6$.\n\n$$\nP(X = k) = \\frac{e^{-\\lambda}\\,\\lambda^k}{k!}\n$$",
@@ -128,6 +128,2753 @@
       "Condicionar reduce el espacio muestral al evento B"
     ],
     "fuente": "Final 2026, Ej. 1a",
+    "revisada": false
+  },
+  {
+    "id": "desc-002",
+    "tema": "descriptiva",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Rendimiento de combustible: $Q_1 = 18$ y $Q_3 = 36$ millas por galón (mínimo $13$, máximo $50$). ¿Cuánto vale el rango intercuartil?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$8$"
+      },
+      {
+        "id": "b",
+        "texto": "$37$"
+      },
+      {
+        "id": "c",
+        "texto": "$10$"
+      },
+      {
+        "id": "d",
+        "texto": "$18$"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "$RIC = Q_3 - Q_1 = 36 - 18 = 18$ millas por galón.",
+    "puntosClave": [],
+    "explicacion": "El RIC es la amplitud del 50% central de los datos:\n\n$$\nRIC = Q_3 - Q_1 = 36 - 18 = 18\n$$\n\n$37$ es el rango total ($50 - 13$), que depende de los extremos.",
+    "fuente": "Final 2022, Ej. 1b",
+    "revisada": false
+  },
+  {
+    "id": "desc-003",
+    "tema": "descriptiva",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "Con los datos del rendimiento de combustible (media $27{,}5$, mediana $26$, mínimo $13$, máximo $50$, $Q_1 = 18$, $Q_3 = 36$), ¿es posible determinar el número de automóviles utilizados en el estudio? Justificá.",
+    "respuestaModelo": "No. Las medidas de resumen (media, cuartiles, mínimo y máximo) describen la posición y la dispersión de los datos, pero no dependen de cuántos datos hay: los cuartiles son posiciones relativas (25%, 50%, 75%) y la misma media o mediana se puede obtener con muestras de distinto tamaño.",
+    "puntosClave": [
+      "No se puede determinar $n$",
+      "Los cuartiles son posiciones relativas, no cantidades",
+      "El mismo resumen de cinco números puede venir de muestras de distinto tamaño"
+    ],
+    "fuente": "Final 2022, Ej. 1d",
+    "revisada": false
+  },
+  {
+    "id": "desc-004",
+    "tema": "descriptiva",
+    "nivel": 2,
+    "tipo": "abierta",
+    "enunciado": "Explicá cómo armarías el diagrama de caja aproximado para el rendimiento de combustible: mínimo $13$, $Q_1 = 18$, mediana $26$, $Q_3 = 36$, máximo $50$. ¿Hay valores atípicos según el criterio de $1{,}5 \\cdot RIC$?",
+    "respuestaModelo": "La caja va de $Q_1 = 18$ a $Q_3 = 36$, con una línea en la mediana ($26$). El $RIC = 18$, así que los límites para atípicos son $18 - 1{,}5 \\cdot 18 = -9$ y $36 + 1{,}5 \\cdot 18 = 63$. Como el mínimo ($13$) y el máximo ($50$) quedan dentro de esos límites, no hay atípicos y los bigotes llegan hasta $13$ y $50$. La mediana está más cerca de $Q_1$ y el bigote derecho es más largo: sesgo positivo.",
+    "puntosClave": [
+      "La caja va de $Q_1$ a $Q_3$ con la mediana marcada",
+      "Límites de atípicos: $Q_1 - 1{,}5\\,RIC$ y $Q_3 + 1{,}5\\,RIC$ ($-9$ y $63$)",
+      "No hay atípicos: los bigotes llegan al mínimo y al máximo",
+      "La forma de la caja muestra sesgo positivo"
+    ],
+    "fuente": "Final 2022, Ej. 1a",
+    "revisada": false
+  },
+  {
+    "id": "desc-005",
+    "tema": "descriptiva",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Unidades producidas por día por 10 obreros: $5, 4, 6, 5, 5, 4, 6, 30, 30, 5$. ¿Cuál de las medidas de posición es la **menos** representativa de los datos?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "La media aritmética"
+      },
+      {
+        "id": "b",
+        "texto": "La mediana"
+      },
+      {
+        "id": "c",
+        "texto": "La moda"
+      },
+      {
+        "id": "d",
+        "texto": "Las tres son igual de representativas"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "La media ($10$), porque los dos valores extremos ($30$) la arrastran hacia arriba; la mediana y la moda valen $5$.",
+    "puntosClave": [],
+    "explicacion": "Media $= 100/10 = 10$. Ordenados: $4, 4, 5, 5, 5, 5, 6, 6, 30, 30$, así que la mediana es $5$ y la moda es $5$.\n\nLa media es sensible a los valores extremos: casi ningún obrero produce cerca de $10$ unidades. La mediana y la moda son **resistentes** a los atípicos.",
+    "fuente": "TP4, Ej. 4",
+    "revisada": false
+  },
+  {
+    "id": "desc-006",
+    "tema": "descriptiva",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "Cuatro distribuciones de frecuencias tienen la misma media: (a) forma de campana simétrica, (b) forma de U con las frecuencias más altas en los extremos, (c) muy concentrada en el valor central, (d) uniforme. ¿Cuál tiene **mayor** dispersión?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "(c) concentrada en el centro"
+      },
+      {
+        "id": "b",
+        "texto": "(a) campana"
+      },
+      {
+        "id": "c",
+        "texto": "(d) uniforme"
+      },
+      {
+        "id": "d",
+        "texto": "(b) forma de U"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "La (b): la mayoría de los datos está en los extremos, lejos de la media, así que las desviaciones respecto de la media son las más grandes.",
+    "puntosClave": [],
+    "explicacion": "La dispersión mide qué tan lejos de la media están los datos. En la forma de U la mayor parte de las observaciones está en los valores extremos, por eso tiene la mayor varianza. El orden de menor a mayor dispersión es (c) < (a) < (d) < (b).",
+    "fuente": "TP4, Ej. 6",
+    "revisada": false
+  },
+  {
+    "id": "desc-007",
+    "tema": "descriptiva",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Precipitaciones de 52 eventos de lluvia en el desierto de Sonora: la mayoría son de 1 a 6 mm, unos pocos superan los 15 mm y uno llega a 46 mm. La media es $6{,}73$ mm y la mediana $4$ mm. ¿Qué medida representa mejor un evento típico y por qué?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "La media, porque usa todos los datos"
+      },
+      {
+        "id": "b",
+        "texto": "Cualquiera de las dos, porque la diferencia es chica"
+      },
+      {
+        "id": "c",
+        "texto": "La media, porque es mayor que la mediana"
+      },
+      {
+        "id": "d",
+        "texto": "La mediana, porque la distribución tiene sesgo positivo y la media está inflada por los eventos grandes"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "La mediana ($4$ mm). La distribución tiene sesgo positivo: unos pocos eventos muy grandes tiran la media hacia arriba.",
+    "puntosClave": [],
+    "explicacion": "Cuando la media es mayor que la mediana, la distribución tiene sesgo positivo (cola a la derecha). La media ($6{,}73$ mm) queda por encima de casi todos los eventos típicos; la mediana ($4$ mm) no se ve afectada por los valores extremos. La moda también es $4$ mm.",
+    "fuente": "TP4, Ej. 2 y 5",
+    "revisada": false
+  },
+  {
+    "id": "prob-002",
+    "tema": "probabilidad",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Control de calidad de alimentos. Probabilidades conjuntas: Apto y aprobada $0{,}843$; Apto y rechazada $0{,}026$; No apto y aprobada $0{,}0012$; falta No apto y rechazada. ¿Cuánto vale $P(\\text{No apto} \\mid \\text{Rechazada})$?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$0{,}0012$"
+      },
+      {
+        "id": "b",
+        "texto": "Aproximadamente $0{,}167$"
+      },
+      {
+        "id": "c",
+        "texto": "$0{,}1298$"
+      },
+      {
+        "id": "d",
+        "texto": "Aproximadamente $0{,}833$"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "La celda faltante es $1 - 0{,}843 - 0{,}026 - 0{,}0012 = 0{,}1298$. Entonces $P(\\text{No apto} \\mid \\text{Rech.}) = 0{,}1298 / 0{,}1558 \\approx 0{,}833$.",
+    "puntosClave": [],
+    "explicacion": "1. Las cuatro celdas suman 1: $P(\\text{No apto} \\cap \\text{Rech.}) = 1 - 0{,}843 - 0{,}026 - 0{,}0012 = 0{,}1298$.\n2. Marginal: $P(\\text{Rech.}) = 0{,}026 + 0{,}1298 = 0{,}1558$.\n3. Condicional:\n\n$$\nP(\\text{No apto} \\mid \\text{Rech.}) = \\frac{0{,}1298}{0{,}1558} \\approx 0{,}833\n$$\n\n$0{,}1298$ es la probabilidad **conjunta** (no condicional) y $0{,}167$ es $P(\\text{Apto} \\mid \\text{Rech.})$.",
+    "fuente": "Final 2026, Ej. 1a",
+    "revisada": false
+  },
+  {
+    "id": "prob-003",
+    "tema": "probabilidad",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "Con la tabla del control de calidad (Apto y aprobada $0{,}843$; Apto y rechazada $0{,}026$; No apto y aprobada $0{,}0012$; No apto y rechazada $0{,}1298$), ¿son independientes los eventos \"alimento apto\" y \"muestra aprobada\"? Justificá formalmente.",
+    "respuestaModelo": "No son independientes. Para que lo sean tendría que cumplirse $P(\\text{Apto} \\cap \\text{Aprob.}) = P(\\text{Apto}) \\cdot P(\\text{Aprob.})$. Las marginales son $P(\\text{Apto}) = 0{,}869$ y $P(\\text{Aprob.}) = 0{,}8442$, cuyo producto es $\\approx 0{,}734$, distinto de $0{,}843$. Saber que una muestra fue aprobada cambia la probabilidad de que sea apta (lo esperable en un sistema de control que funciona).",
+    "puntosClave": [
+      "Definición: $A$ y $B$ independientes si $P(A \\cap B) = P(A)\\,P(B)$",
+      "Marginales: $P(\\text{Apto}) = 0{,}869$ y $P(\\text{Aprob.}) = 0{,}8442$",
+      "$0{,}869 \\cdot 0{,}8442 \\approx 0{,}734 \\neq 0{,}843$, así que no son independientes",
+      "Interpretación: aprobar aporta información sobre si el alimento es apto"
+    ],
+    "fuente": "Final 2026, Ej. 1b",
+    "revisada": false
+  },
+  {
+    "id": "prob-004",
+    "tema": "probabilidad",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "En el sistema de control de calidad de alimentos, $P(\\text{No apto} \\cap \\text{Aprobada}) = 0{,}0012$ y $P(\\text{Apto} \\cap \\text{Rechazada}) = 0{,}026$. Desde el punto de vista del control de calidad, ¿qué tipo de error parece más preocupante? Justificá conceptualmente.",
+    "respuestaModelo": "Hay dos errores posibles: rechazar un alimento apto y aprobar un alimento no apto. Aunque aprobar un no apto es menos frecuente ($0{,}0012$ contra $0{,}026$), es el más preocupante porque un alimento no apto llega al consumidor y puede afectar la salud. Rechazar un alimento apto tiene sobre todo un costo económico (se descarta o se vuelve a analizar). La gravedad de un error no depende solo de su probabilidad sino de sus consecuencias.",
+    "puntosClave": [
+      "Identificar los dos errores: rechazar apto y aprobar no apto",
+      "Aprobar un alimento no apto es el más grave (riesgo para la salud)",
+      "Rechazar un apto tiene costo económico, no sanitario",
+      "La gravedad depende de las consecuencias, no solo de la probabilidad"
+    ],
+    "fuente": "Final 2026, Ej. 1c",
+    "revisada": false
+  },
+  {
+    "id": "prob-005",
+    "tema": "probabilidad",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Muestras de acero galvanizado (frecuencias): rugosidad alta y peso alto $12$; rugosidad alta y peso bajo $16$; rugosidad baja y peso alto $88$; rugosidad baja y peso bajo $34$. Si el peso del recubrimiento es **alto**, ¿cuál es la probabilidad de que la rugosidad sea alta?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Aproximadamente $0{,}667$"
+      },
+      {
+        "id": "b",
+        "texto": "$0{,}08$"
+      },
+      {
+        "id": "c",
+        "texto": "$0{,}12$"
+      },
+      {
+        "id": "d",
+        "texto": "Aproximadamente $0{,}429$"
+      }
+    ],
+    "respuestaCorrecta": "c",
+    "respuestaModelo": "$P(\\text{Rug. alta} \\mid \\text{Peso alto}) = 12 / (12 + 88) = 0{,}12$.",
+    "puntosClave": [],
+    "explicacion": "Condicionar por \"peso alto\" reduce el espacio muestral a las $12 + 88 = 100$ muestras de peso alto:\n\n$$\nP(\\text{Rug. alta} \\mid \\text{Peso alto}) = \\frac{12}{100} = 0{,}12\n$$\n\n$0{,}429 = 12/28$ es la condicional al revés, $P(\\text{Peso alto} \\mid \\text{Rug. alta})$, y $0{,}08 = 12/150$ es la conjunta.",
+    "fuente": "TP1, Ej. 5b",
+    "revisada": false
+  },
+  {
+    "id": "prob-006",
+    "tema": "probabilidad",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "$A$ y $B$ son mutuamente excluyentes, con $P(A) = 0{,}29$ y $P(B) = 0{,}43$. ¿Son independientes?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "No se puede saber sin más datos"
+      },
+      {
+        "id": "b",
+        "texto": "Sí, porque no tienen elementos en común"
+      },
+      {
+        "id": "c",
+        "texto": "Sí, porque la ocurrencia de uno no influye en la del otro"
+      },
+      {
+        "id": "d",
+        "texto": "No, porque $P(A \\cap B) = 0$ pero $P(A)\\,P(B) \\neq 0$"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "No. Al ser excluyentes $P(A \\cap B) = 0$, pero $P(A)\\,P(B) = 0{,}29 \\cdot 0{,}43 \\approx 0{,}125 \\neq 0$.",
+    "puntosClave": [],
+    "explicacion": "Excluyentes e independientes son conceptos distintos. Si $A$ ocurre, sabemos que $B$ **no** ocurre: eso es información, así que no son independientes.\n\n$$\nP(A \\cap B) = 0 \\neq P(A)\\,P(B) \\approx 0{,}125\n$$\n\nDos eventos con probabilidad positiva no pueden ser a la vez excluyentes e independientes.",
+    "fuente": "TP1, Ej. 7e",
+    "revisada": false
+  },
+  {
+    "id": "prob-007",
+    "tema": "probabilidad",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "La probabilidad de que un auto necesite cambio de aceite es $0{,}25$, de que necesite filtro nuevo es $0{,}40$ y de que necesite ambos es $0{,}14$. Si se tiene que cambiar el aceite, ¿cuál es la probabilidad de que también necesite filtro?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$0{,}35$"
+      },
+      {
+        "id": "b",
+        "texto": "$0{,}14$"
+      },
+      {
+        "id": "c",
+        "texto": "$0{,}10$"
+      },
+      {
+        "id": "d",
+        "texto": "$0{,}56$"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "$P(\\text{Filtro} \\mid \\text{Aceite}) = 0{,}14 / 0{,}25 = 0{,}56$.",
+    "puntosClave": [],
+    "explicacion": "$$\nP(F \\mid A) = \\frac{P(F \\cap A)}{P(A)} = \\frac{0{,}14}{0{,}25} = 0{,}56\n$$\n\n$0{,}35 = 0{,}14/0{,}40$ es $P(A \\mid F)$: se dividió por el evento equivocado.",
+    "fuente": "TP1, Ej. 8b",
+    "revisada": false
+  },
+  {
+    "id": "prob-008",
+    "tema": "probabilidad",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Dos máquinas producen por día 500 (A) y 800 (B) cajas de tornillos. A produce 3% de defectuosos y B 5%. Se elige una caja al azar y un tornillo resulta defectuoso. ¿Cuál es la probabilidad de que venga de la máquina A?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Aproximadamente $0{,}042$"
+      },
+      {
+        "id": "b",
+        "texto": "Aproximadamente $0{,}273$"
+      },
+      {
+        "id": "c",
+        "texto": "$0{,}03$"
+      },
+      {
+        "id": "d",
+        "texto": "Aproximadamente $0{,}385$"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "Por Bayes: $P(A \\mid D) = \\dfrac{500 \\cdot 0{,}03}{500 \\cdot 0{,}03 + 800 \\cdot 0{,}05} = \\dfrac{15}{55} \\approx 0{,}273$.",
+    "puntosClave": [],
+    "explicacion": "Probabilidad total: $P(D) = \\frac{500}{1300} \\cdot 0{,}03 + \\frac{800}{1300} \\cdot 0{,}05 \\approx 0{,}0423$.\n\nTeorema de Bayes:\n\n$$\nP(A \\mid D) = \\frac{P(A)\\,P(D \\mid A)}{P(D)} = \\frac{15}{55} \\approx 0{,}273\n$$\n\n$0{,}385 = 500/1300$ es la probabilidad **a priori** de A; $0{,}042$ es $P(D)$.",
+    "fuente": "TP1, Ej. 14b",
+    "revisada": false
+  },
+  {
+    "id": "prob-009",
+    "tema": "probabilidad",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Conductores: 80% clase B (prob. de accidente $0{,}02$), 10% clase R ($0{,}04$) y 10% clase M ($0{,}08$). Un conductor informa que tuvo un accidente. ¿Cuál es la probabilidad de que sea de clase B?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$0{,}02$"
+      },
+      {
+        "id": "b",
+        "texto": "Aproximadamente $0{,}286$"
+      },
+      {
+        "id": "c",
+        "texto": "$0{,}80$"
+      },
+      {
+        "id": "d",
+        "texto": "Aproximadamente $0{,}571$"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "$P(B \\mid \\text{Acc.}) = \\dfrac{0{,}8 \\cdot 0{,}02}{0{,}028} \\approx 0{,}571$.",
+    "puntosClave": [],
+    "explicacion": "Probabilidad total: $P(\\text{Acc.}) = 0{,}8 \\cdot 0{,}02 + 0{,}1 \\cdot 0{,}04 + 0{,}1 \\cdot 0{,}08 = 0{,}028$.\n\n$$\nP(B \\mid \\text{Acc.}) = \\frac{0{,}016}{0{,}028} \\approx 0{,}571\n$$\n\nAunque los de clase B tienen menos accidentes, son tantos que siguen siendo la mayoría de los accidentados. La probabilidad bajó de $0{,}80$ (a priori) a $0{,}571$ (a posteriori).",
+    "fuente": "TP1, Ej. 15",
+    "revisada": false
+  },
+  {
+    "id": "tcl-002",
+    "tema": "muestreo-tcl",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "Una población **no normal** tiene media $100$ y desviación estándar $21$. Si se extrajeran muchas muestras de tamaño $n = 49$, ¿cómo sería la distribución de las medias muestrales en cuanto a forma, media y desviación estándar? Justificá.",
+    "respuestaModelo": "Por el Teorema Central del Límite, como $n = 49$ es grande, la distribución de $\\bar{X}$ es aproximadamente normal aunque la población no lo sea. Su media es la de la población, $\\mu_{\\bar{X}} = 100$, y su desviación estándar (error estándar) es $\\sigma_{\\bar{X}} = \\sigma/\\sqrt{n} = 21/7 = 3$.",
+    "puntosClave": [
+      "Forma aproximadamente normal por el TCL ($n$ grande)",
+      "Media: $\\mu_{\\bar{X}} = \\mu = 100$",
+      "Desviación estándar: $\\sigma_{\\bar{X}} = \\sigma / \\sqrt{n} = 3$",
+      "Vale aunque la población no sea normal"
+    ],
+    "fuente": "Final 2022, Ej. 2a",
+    "revisada": false
+  },
+  {
+    "id": "tcl-003",
+    "tema": "muestreo-tcl",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "¿Qué sucede con la distribución muestral de las medias si aumenta el tamaño de la muestra?",
+    "respuestaModelo": "La media de la distribución no cambia (sigue siendo $\\mu$), pero el error estándar $\\sigma/\\sqrt{n}$ disminuye, así que las medias muestrales se concentran más alrededor de $\\mu$: la estimación es más precisa. Además, por el TCL, la forma se parece cada vez más a una normal.",
+    "puntosClave": [
+      "La media sigue siendo $\\mu$",
+      "El error estándar $\\sigma/\\sqrt{n}$ disminuye",
+      "Las medias se concentran más cerca de μ (más precisión)",
+      "La forma se aproxima más a la normal (TCL)"
+    ],
+    "fuente": "Final 2022, Ej. 2c",
+    "revisada": false
+  },
+  {
+    "id": "tcl-004",
+    "tema": "muestreo-tcl",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Al muestrear una población infinita, el tamaño de muestra aumenta de $n = 50$ a $n = 200$. ¿Qué pasa con el error estándar de la media?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Se reduce a la mitad"
+      },
+      {
+        "id": "b",
+        "texto": "Se reduce a la cuarta parte"
+      },
+      {
+        "id": "c",
+        "texto": "Se duplica"
+      },
+      {
+        "id": "d",
+        "texto": "No cambia"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "Se reduce a la mitad, porque $\\sigma_{\\bar{X}} = \\sigma/\\sqrt{n}$ y $\\sqrt{200/50} = 2$.",
+    "puntosClave": [],
+    "explicacion": "$$\n\\frac{\\sigma/\\sqrt{200}}{\\sigma/\\sqrt{50}} = \\sqrt{\\frac{50}{200}} = \\frac{1}{2}\n$$\n\nEl error estándar depende de $\\sqrt{n}$, no de $n$: para reducirlo a la mitad hay que **cuadruplicar** el tamaño de la muestra.",
+    "fuente": "TP5, Ej. 5a",
+    "revisada": false
+  },
+  {
+    "id": "tcl-005",
+    "tema": "muestreo-tcl",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Una población tiene edad media $40$ años y desviación estándar $6$ años. Se toma una muestra aleatoria de $100$ personas. ¿Cuál es la probabilidad de que la media muestral esté entre $40$ y $41$ años?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Aproximadamente $0{,}952$"
+      },
+      {
+        "id": "b",
+        "texto": "Aproximadamente $0{,}159$"
+      },
+      {
+        "id": "c",
+        "texto": "Aproximadamente $0{,}066$"
+      },
+      {
+        "id": "d",
+        "texto": "Aproximadamente $0{,}452$"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "$\\sigma_{\\bar{X}} = 6/10 = 0{,}6$; $z = (41 - 40)/0{,}6 \\approx 1{,}67$; $P(0 < Z < 1{,}67) \\approx 0{,}452$.",
+    "puntosClave": [],
+    "explicacion": "Con $n = 100$ el TCL permite usar la normal: $\\bar{X} \\approx N(40;\\ 0{,}6)$.\n\n$$\nz = \\frac{41 - 40}{6/\\sqrt{100}} \\approx 1{,}67 \\qquad P(0 < Z < 1{,}67) \\approx 0{,}452\n$$\n\n$0{,}066$ sale de usar $\\sigma = 6$ en vez del error estándar.",
+    "fuente": "TP5, Ej. 7a",
+    "revisada": false
+  },
+  {
+    "id": "tcl-006",
+    "tema": "muestreo-tcl",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Qué es el error estándar de la media?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "La desviación estándar de la distribución muestral de $\\bar{X}$, igual a $\\sigma/\\sqrt{n}$"
+      },
+      {
+        "id": "b",
+        "texto": "El error que se comete al medir cada dato"
+      },
+      {
+        "id": "c",
+        "texto": "La desviación estándar de la población"
+      },
+      {
+        "id": "d",
+        "texto": "La diferencia entre la media muestral y la poblacional en una muestra"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "Es la desviación estándar de la distribución de las medias muestrales: $\\sigma_{\\bar{X}} = \\sigma / \\sqrt{n}$.",
+    "puntosClave": [],
+    "explicacion": "Mide cuánto varían las medias de distintas muestras alrededor de $\\mu$:\n\n$$\n\\sigma_{\\bar{X}} = \\frac{\\sigma}{\\sqrt{n}}\n$$\n\nNo es la diferencia en una muestra particular (eso es el error de muestreo de esa muestra) sino la dispersión típica de $\\bar{X}$.",
+    "fuente": "TP5, Ej. 4 y 5",
+    "revisada": false
+  },
+  {
+    "id": "tcl-007",
+    "tema": "muestreo-tcl",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Se toman muestras de $n = 36$ hebras de un lote de $N = 300$ unidades, con $\\sigma = 1{,}80$ kg. ¿Cuánto vale la desviación estándar de las medias muestrales?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$1{,}80$ kg"
+      },
+      {
+        "id": "b",
+        "texto": "Aproximadamente $0{,}282$ kg"
+      },
+      {
+        "id": "c",
+        "texto": "$0{,}30$ kg"
+      },
+      {
+        "id": "d",
+        "texto": "$0{,}05$ kg"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "Población finita: $\\sigma_{\\bar{X}} = \\dfrac{1{,}8}{\\sqrt{36}} \\sqrt{\\dfrac{300 - 36}{300 - 1}} \\approx 0{,}282$ kg.",
+    "puntosClave": [],
+    "explicacion": "Como la muestra es una parte apreciable del lote ($36/300 = 12\\%$), se aplica el factor de corrección por población finita:\n\n$$\n\\sigma_{\\bar{X}} = \\frac{\\sigma}{\\sqrt{n}} \\sqrt{\\frac{N - n}{N - 1}} = 0{,}3 \\cdot \\sqrt{\\frac{264}{299}} \\approx 0{,}282\n$$\n\n$0{,}30$ es el valor sin corregir, que vale para poblaciones infinitas o muy grandes.",
+    "fuente": "TP5, Ej. 4a",
+    "revisada": false
+  },
+  {
+    "id": "th-002",
+    "tema": "test-hipotesis",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "Se mide el tiempo de respuesta de una aplicación antes y después de una optimización en las mismas 8 ejecuciones, y se hace una prueba para muestras pareadas. ¿Qué forma la muestra que se analiza?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Las diferencias $d_i$ entre las mediciones apareadas"
+      },
+      {
+        "id": "b",
+        "texto": "Los tiempos después de la optimización"
+      },
+      {
+        "id": "c",
+        "texto": "Los 16 tiempos juntos"
+      },
+      {
+        "id": "d",
+        "texto": "Los tiempos antes de la optimización"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "Las diferencias $d_i$ (por ejemplo, antes − después) de cada par de mediciones.",
+    "puntosClave": [],
+    "explicacion": "En una prueba pareada cada ejecución se mide dos veces, así que las mediciones no son independientes. Se trabaja con una sola muestra: las diferencias $d_i$. La variable aleatoria analizada es la **diferencia** de tiempos, no el tiempo después de la optimización.",
+    "fuente": "Final 2026, Ej. 2a y 2b",
+    "revisada": false
+  },
+  {
+    "id": "th-003",
+    "tema": "test-hipotesis",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Se quiere probar si una optimización **reduce** el tiempo de respuesta. Definiendo $d_i = \\text{antes}_i - \\text{después}_i$, ¿cuáles son las hipótesis adecuadas?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$H_0: \\mu_d = 0$ vs. $H_1: \\mu_d \\neq 0$"
+      },
+      {
+        "id": "b",
+        "texto": "$H_0: \\mu_d > 0$ vs. $H_1: \\mu_d = 0$"
+      },
+      {
+        "id": "c",
+        "texto": "$H_0: \\mu_d = 0$ vs. $H_1: \\mu_d > 0$"
+      },
+      {
+        "id": "d",
+        "texto": "$H_0: \\mu_d = 0$ vs. $H_1: \\mu_d < 0$"
+      }
+    ],
+    "respuestaCorrecta": "c",
+    "respuestaModelo": "$H_0: \\mu_d = 0$ (la optimización no cambia el tiempo) contra $H_1: \\mu_d > 0$ (antes es mayor que después, o sea, el tiempo se reduce).",
+    "puntosClave": [],
+    "explicacion": "Lo que se quiere demostrar va en $H_1$. Si el tiempo se reduce, antes $>$ después, así que $d = \\text{antes} - \\text{después}$ es positivo: $H_1: \\mu_d > 0$ (prueba unilateral derecha). $H_0$ siempre lleva la igualdad.\n\nSi se definiera $d = \\text{después} - \\text{antes}$, la alternativa sería $\\mu_d < 0$.",
+    "fuente": "Final 2026, Ej. 2c",
+    "revisada": false
+  },
+  {
+    "id": "th-004",
+    "tema": "test-hipotesis",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "En la prueba pareada sobre 8 ejecuciones, el estadístico es $\\dfrac{\\bar{d} - \\mu_d}{s_d / \\sqrt{n}}$. Alguien afirma que sigue una distribución normal estándar. ¿Es correcto? Explicá qué distribución sigue, por qué y con qué supuesto.",
+    "respuestaModelo": "Es incorrecto. Como la desviación estándar de las diferencias es desconocida y se estima con $s_d$, el estadístico sigue una distribución $t$ de Student con $n - 1 = 7$ grados de libertad. La $t$ tiene colas más pesadas que la normal para compensar la incertidumbre extra de estimar $\\sigma_d$, lo que importa sobre todo con $n$ chico. El supuesto es que las diferencias provienen de una población aproximadamente normal.",
+    "puntosClave": [
+      "Es incorrecto: sigue una $t$ de Student",
+      "Porque $\\sigma_d$ es desconocida y se estima con $s_d$",
+      "Grados de libertad: $n - 1 = 7$",
+      "Supuesto: las diferencias son aproximadamente normales",
+      "La t tiene colas más pesadas, importante con n chico"
+    ],
+    "fuente": "Final 2026, Ej. 2e y 2f",
+    "revisada": false
+  },
+  {
+    "id": "th-005",
+    "tema": "test-hipotesis",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Prueba de hipótesis para muestras pareadas con 8 pares de mediciones, al 5% de significación, unilateral derecha. ¿Cuál es el valor crítico?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$t_{0{,}975;\\,7} \\approx 2{,}365$"
+      },
+      {
+        "id": "b",
+        "texto": "$t_{0{,}95;\\,7} \\approx 1{,}895$"
+      },
+      {
+        "id": "c",
+        "texto": "$t_{0{,}95;\\,8} \\approx 1{,}860$"
+      },
+      {
+        "id": "d",
+        "texto": "$z_{0{,}95} \\approx 1{,}645$"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "Con $n - 1 = 7$ grados de libertad y $\\alpha = 0{,}05$ en una cola: $t_{0{,}95;\\,7} \\approx 1{,}895$.",
+    "puntosClave": [],
+    "explicacion": "Se busca el valor que deja $0{,}05$ en la cola derecha de una $t$ con $8 - 1 = 7$ gl:\n\n$$\nt_{crit} = t_{0{,}95;\\,7} \\approx 1{,}895\n$$\n\n$2{,}365$ sería para una prueba bilateral, $1{,}645$ es el de la normal (incorrecto con $\\sigma$ desconocida) y $1{,}860$ usa mal los gl ($n$ en lugar de $n - 1$).",
+    "fuente": "Final 2026, Ej. 2f y 2g",
+    "revisada": false
+  },
+  {
+    "id": "th-006",
+    "tema": "test-hipotesis",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "En la prueba pareada para ver si la optimización reduce el tiempo de respuesta ($\\alpha = 0{,}05$) se obtiene $P = 0{,}032$. ¿Qué se concluye?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "La probabilidad de que la optimización funcione es 0,968"
+      },
+      {
+        "id": "b",
+        "texto": "No se rechaza $H_0$: la optimización no tiene efecto"
+      },
+      {
+        "id": "c",
+        "texto": "Se rechaza $H_0$: hay evidencia de que la optimización reduce el tiempo de respuesta"
+      },
+      {
+        "id": "d",
+        "texto": "Se acepta $H_0$ con un 96,8% de confianza"
+      }
+    ],
+    "respuestaCorrecta": "c",
+    "respuestaModelo": "Como $P = 0{,}032 < \\alpha = 0{,}05$, se rechaza $H_0$: hay evidencia estadística de que la optimización reduce el tiempo de respuesta.",
+    "puntosClave": [],
+    "explicacion": "Regla de decisión: si $P < \\alpha$ se rechaza $H_0$. Acá $0{,}032 < 0{,}05$.\n\nEl p-valor no es la probabilidad de que $H_0$ (o $H_1$) sea cierta: es la probabilidad de obtener un resultado tan extremo como el observado **si $H_0$ fuera cierta**.",
+    "fuente": "Final 2026, Ej. 2h",
+    "revisada": false
+  },
+  {
+    "id": "th-007",
+    "tema": "test-hipotesis",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "Un revendedor quiere neumáticos con duración media de 40000 km ($\\sigma = 8000$ km). En una muestra de 100 unidades la media es 38000 km, y con $\\alpha = 0{,}05$ se rechaza la afirmación del fabricante. ¿Qué tipo de error se puede estar cometiendo? Justificá.",
+    "respuestaModelo": "Como se rechazó $H_0$ ($\\mu = 40000$), el único error posible es el de tipo I: rechazar $H_0$ siendo verdadera, es decir, concluir que los neumáticos duran menos cuando en realidad cumplen. Su probabilidad máxima es el nivel de significación $\\alpha = 0{,}05$. El error de tipo II (no rechazar $H_0$ siendo falsa) solo puede ocurrir cuando no se rechaza.",
+    "puntosClave": [
+      "Se rechazó $H_0$, así que solo es posible el error de tipo I",
+      "Error tipo I: rechazar $H_0$ cuando es verdadera",
+      "Su probabilidad es $\\alpha = 0{,}05$",
+      "El error tipo II solo puede ocurrir si no se rechaza $H_0$"
+    ],
+    "fuente": "TP6, Ej. 1e",
+    "revisada": false
+  },
+  {
+    "id": "th-008",
+    "tema": "test-hipotesis",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "El fabricante afirma que sus cuerdas resisten 80 kg en promedio. Una muestra de 9 cuerdas da $\\bar{x} = 78{,}5$ kg y $s = 18$ kg. Con $\\alpha = 0{,}05$ (bilateral), ¿qué se concluye?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$z = -0{,}25$; como $|z| < 1{,}96$ no se rechaza $H_0$"
+      },
+      {
+        "id": "b",
+        "texto": "$t = -0{,}75$ con 8 gl; se rechaza $H_0$"
+      },
+      {
+        "id": "c",
+        "texto": "$t = -0{,}25$ con 8 gl; como $|t| < 2{,}306$ no se rechaza $H_0$: se puede admitir la afirmación"
+      },
+      {
+        "id": "d",
+        "texto": "Se rechaza $H_0$ porque $78{,}5 < 80$"
+      }
+    ],
+    "respuestaCorrecta": "c",
+    "respuestaModelo": "$t = \\dfrac{78{,}5 - 80}{18/\\sqrt{9}} = -0{,}25$; con 8 gl el valor crítico es $\\pm 2{,}306$, así que no se rechaza $H_0$.",
+    "puntosClave": [],
+    "explicacion": "Como $\\sigma$ es desconocida y $n = 9$ es chico, se usa la $t$ con $n - 1 = 8$ gl (suponiendo resistencias aproximadamente normales):\n\n$$\nt = \\frac{\\bar{x} - \\mu_0}{s/\\sqrt{n}} = \\frac{78{,}5 - 80}{18/3} = -0{,}25\n$$\n\n$|t| = 0{,}25 < t_{0{,}975;\\,8} \\approx 2{,}306$: la diferencia observada es compatible con el azar. Que $78{,}5 < 80$ no alcanza por sí solo para rechazar.",
+    "fuente": "TP6, Ej. 3",
+    "revisada": false
+  },
+  {
+    "id": "poi-002",
+    "tema": "poisson",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "Un servidor recibe en promedio 12 solicitudes por minuto (Poisson). Un estudiante afirma: \"como el promedio es 12, la probabilidad de recibir exactamente 12 solicitudes en un minuto es la más alta\". ¿Es necesariamente correcta? Justificá conceptualmente.",
+    "respuestaModelo": "No es necesariamente correcta. La media de una distribución no tiene por qué ser su valor más probable. En la Poisson, cuando $\\lambda$ es entero hay dos modas, $\\lambda - 1$ y $\\lambda$: con $\\lambda = 12$, $P(X = 11) = P(X = 12) \\approx 0{,}114$, así que 12 no es \"la\" más alta sino que empata con 11. Además, aunque sea un valor modal, su probabilidad es baja: lo más probable es recibir un valor distinto de 12.",
+    "puntosClave": [
+      "La media no es necesariamente el valor más probable",
+      "Con $\\lambda$ entero hay dos modas: $\\lambda - 1$ y $\\lambda$",
+      "$P(X = 11) = P(X = 12) \\approx 0{,}114$",
+      "Aun siendo modal, la probabilidad de exactamente 12 es baja"
+    ],
+    "fuente": "Final 2026, Ej. 3b",
+    "revisada": false
+  },
+  {
+    "id": "poi-003",
+    "tema": "poisson",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "¿Cuáles son los supuestos de un proceso de Poisson? Explicalos con el ejemplo de las solicitudes que llegan a un servidor.",
+    "respuestaModelo": "Se cuentan eventos en un intervalo fijo (de tiempo, espacio, etc.). Los eventos ocurren de forma independiente: que llegue una solicitud no cambia la probabilidad de que llegue otra. La tasa media es constante y proporcional a la longitud del intervalo (12 por minuto implica 6 cada 30 segundos). En un intervalo muy chico la probabilidad de dos eventos simultáneos es despreciable. La variable puede tomar cualquier valor entero $0, 1, 2, \\dots$ sin un máximo.",
+    "puntosClave": [
+      "Se cuentan eventos en un intervalo fijo",
+      "Los eventos son independientes",
+      "La tasa es constante y proporcional a la longitud del intervalo",
+      "No hay eventos simultáneos en intervalos muy chicos",
+      "No hay un máximo de eventos posibles"
+    ],
+    "fuente": "Final 2026, Ej. 3; TP2",
+    "revisada": false
+  },
+  {
+    "id": "poi-004",
+    "tema": "poisson",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Un servidor recibe en promedio 12 solicitudes por minuto, pero solo puede procesar como máximo 20 y las que exceden ese límite son rechazadas. ¿Por qué la cantidad de solicitudes **procesadas** en un minuto no puede modelarse con una Poisson?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Porque un minuto es un intervalo demasiado largo"
+      },
+      {
+        "id": "b",
+        "texto": "Porque la variable queda acotada en 20, y una Poisson admite cualquier entero no negativo"
+      },
+      {
+        "id": "c",
+        "texto": "Porque la tasa de llegada no es constante"
+      },
+      {
+        "id": "d",
+        "texto": "Porque 20 es mayor que la media"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "Porque la variable no puede superar 20: queda truncada, y una Poisson puede tomar cualquier valor $0, 1, 2, \\dots$ sin máximo.",
+    "puntosClave": [],
+    "explicacion": "Las llegadas sí pueden ser Poisson, pero la variable \"procesadas\" es $\\min(X, 20)$: toda la probabilidad de $X > 20$ se acumula en 20. Esa distribución ya no es Poisson.\n\nPor la misma lógica tampoco es Poisson \"la cantidad de solicitudes hasta que llega la de un usuario determinado\": no se cuenta en un intervalo fijo.",
+    "fuente": "Final 2026, Ej. 3c (iii y iv)",
+    "revisada": false
+  },
+  {
+    "id": "poi-005",
+    "tema": "poisson",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "A un puerto llegan en promedio 10 camiones por día y las instalaciones atienden como máximo 15 por día. ¿Cuál es la probabilidad de que en un día se exceda ese límite?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Aproximadamente $0{,}951$"
+      },
+      {
+        "id": "b",
+        "texto": "Aproximadamente $0{,}035$"
+      },
+      {
+        "id": "c",
+        "texto": "Aproximadamente $0{,}083$"
+      },
+      {
+        "id": "d",
+        "texto": "Aproximadamente $0{,}049$"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "$X \\sim \\text{Poisson}(10)$: $P(X > 15) = 1 - F(15;\\ 10) \\approx 0{,}049$.",
+    "puntosClave": [],
+    "explicacion": "Exceder el límite es recibir **16 o más** camiones:\n\n$$\nP(X > 15) = 1 - P(X \\le 15) = 1 - \\sum_{x=0}^{15} \\frac{e^{-10}\\,10^x}{x!} \\approx 0{,}049\n$$\n\n$0{,}951$ es $P(X \\le 15)$.",
+    "fuente": "TP2, Ej. 12",
+    "revisada": false
+  },
+  {
+    "id": "poi-006",
+    "tema": "poisson",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "A la caja de un banco llegan en promedio 1,5 clientes por minuto. ¿Cuál es la probabilidad de que lleguen **al menos 3** clientes en un intervalo de 2 minutos?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Aproximadamente $0{,}423$"
+      },
+      {
+        "id": "b",
+        "texto": "Aproximadamente $0{,}577$"
+      },
+      {
+        "id": "c",
+        "texto": "Aproximadamente $0{,}191$"
+      },
+      {
+        "id": "d",
+        "texto": "Aproximadamente $0{,}224$"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "En 2 minutos $\\lambda = 1{,}5 \\cdot 2 = 3$; $P(X \\ge 3) = 1 - P(X \\le 2) = 1 - 8{,}5\\,e^{-3} \\approx 0{,}577$.",
+    "puntosClave": [],
+    "explicacion": "Primero se ajusta el parámetro al intervalo: $\\lambda = 1{,}5 \\cdot 2 = 3$.\n\n$$\nP(X \\ge 3) = 1 - e^{-3}\\left(1 + 3 + \\frac{3^2}{2}\\right) = 1 - 8{,}5\\,e^{-3} \\approx 0{,}577\n$$\n\n$0{,}191$ sale de usar $\\lambda = 1{,}5$ (sin ajustar al intervalo) y $0{,}423$ es $P(X \\le 2)$.",
+    "fuente": "TP2, Ej. 15b",
+    "revisada": false
+  },
+  {
+    "id": "poi-007",
+    "tema": "poisson",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "La probabilidad de contraer una enfermedad estando vacunado es $0{,}002$. Para 2000 personas vacunadas se aproxima la binomial con una Poisson. ¿Qué parámetro se usa?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$\\lambda = 0{,}002$"
+      },
+      {
+        "id": "b",
+        "texto": "$\\lambda = 2000$"
+      },
+      {
+        "id": "c",
+        "texto": "$\\lambda = n\\,p\\,(1-p) \\approx 3{,}99$"
+      },
+      {
+        "id": "d",
+        "texto": "$\\lambda = n\\,p = 4$"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "$\\lambda = n\\,p = 2000 \\cdot 0{,}002 = 4$.",
+    "puntosClave": [],
+    "explicacion": "Cuando $n$ es grande y $p$ es chica, la $\\text{Binomial}(n, p)$ se aproxima con una $\\text{Poisson}(\\lambda = np)$, que conserva la media:\n\n$$\n\\lambda = n\\,p = 2000 \\cdot 0{,}002 = 4\n$$",
+    "fuente": "TP2, Ej. 14",
+    "revisada": false
+  },
+  {
+    "id": "reg-001",
+    "tema": "regresion",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "Una empresa modela el monto de compra (\\$) en función del tiempo de navegación (min). La salida de R es lm(formula = monto ~ tiempo), con coeficientes (Intercept) $150{,}32$ y tiempo $12{,}08$. ¿Cuál es el modelo ajustado?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$\\widehat{\\text{tiempo}} = 150{,}32 + 12{,}08 \\cdot \\text{monto}$"
+      },
+      {
+        "id": "b",
+        "texto": "$\\widehat{\\text{monto}} = 150{,}32 + 12{,}08 \\cdot \\text{tiempo}$"
+      },
+      {
+        "id": "c",
+        "texto": "$\\widehat{\\text{monto}} = 150{,}32 \\cdot 12{,}08^{\\,\\text{tiempo}}$"
+      },
+      {
+        "id": "d",
+        "texto": "$\\widehat{\\text{monto}} = 12{,}08 + 150{,}32 \\cdot \\text{tiempo}$"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "Variable dependiente: monto; independiente: tiempo. Modelo: $\\widehat{\\text{monto}} = 150{,}32 + 12{,}08 \\cdot \\text{tiempo}$.",
+    "puntosClave": [],
+    "explicacion": "En la fórmula de R, lo que va a la izquierda de ~ es la variable **dependiente** (monto) y lo de la derecha la **independiente** (tiempo). El (Intercept) es $\\hat{\\beta}_0$ y el coeficiente de tiempo es la pendiente $\\hat{\\beta}_1$.",
+    "fuente": "Final 2026, Ej. 4a",
+    "revisada": false
+  },
+  {
+    "id": "reg-002",
+    "tema": "regresion",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "En el modelo $\\widehat{\\text{monto}} = 150{,}32 + 12{,}08 \\cdot \\text{tiempo}$ (monto en \\$, tiempo de navegación en minutos), interpretá $\\hat{\\beta}_0$ y $\\hat{\\beta}_1$ en el contexto del problema.",
+    "respuestaModelo": "$\\hat{\\beta}_1 = 12{,}08$: por cada minuto adicional de navegación, el monto de compra **medio** estimado aumenta en \\$12,08. $\\hat{\\beta}_0 = 150{,}32$: es el monto medio estimado cuando el tiempo de navegación es 0 minutos; matemáticamente es la ordenada al origen, pero su interpretación práctica es dudosa porque comprar sin navegar no tiene mucho sentido y probablemente esté fuera del rango de los datos.",
+    "puntosClave": [
+      "$\\hat{\\beta}_1$: cambio en el monto medio por cada minuto adicional (\\$12,08)",
+      "Se habla del monto medio o esperado, no de cada cliente",
+      "$\\hat{\\beta}_0$: monto medio estimado con tiempo 0",
+      "$\\hat{\\beta}_0$ puede no tener sentido práctico (fuera del rango de los datos)"
+    ],
+    "fuente": "Final 2026, Ej. 4b",
+    "revisada": false
+  },
+  {
+    "id": "reg-003",
+    "tema": "regresion",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "En la regresión de monto sobre tiempo, la fila de la pendiente dice: Estimate $12{,}08$, Std. Error $3{,}85$, t value $3{,}14$, Pr(>|t|) $0{,}0024$. ¿Existe relación lineal significativa al 5%?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "No: el R² es bajo, así que la relación no es significativa"
+      },
+      {
+        "id": "b",
+        "texto": "Sí: la pendiente es mayor que su error estándar"
+      },
+      {
+        "id": "c",
+        "texto": "Sí: el p-valor de la pendiente (0,0024) es menor que 0,05, así que se rechaza $H_0: \\beta_1 = 0$"
+      },
+      {
+        "id": "d",
+        "texto": "No se puede saber sin el coeficiente de correlación"
+      }
+    ],
+    "respuestaCorrecta": "c",
+    "respuestaModelo": "Sí. Se prueba $H_0: \\beta_1 = 0$ contra $H_1: \\beta_1 \\neq 0$; como $p = 0{,}0024 < 0{,}05$ se rechaza $H_0$: hay relación lineal significativa.",
+    "puntosClave": [],
+    "explicacion": "La significación de la relación lineal se evalúa con el test sobre la pendiente:\n\n$$\nt = \\frac{\\hat{\\beta}_1}{SE(\\hat{\\beta}_1)} = \\frac{12{,}08}{3{,}85} \\approx 3{,}14 \\qquad p = 0{,}0024 < 0{,}05\n$$\n\nEn regresión simple coincide con el p-valor del estadístico F. Un R² bajo no impide que la relación sea significativa: son cosas distintas.",
+    "fuente": "Final 2026, Ej. 4c",
+    "revisada": false
+  },
+  {
+    "id": "reg-004",
+    "tema": "regresion",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "En la regresión de monto de compra sobre tiempo de navegación, $R^2 = 0{,}145$. ¿Qué significa?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "El modelo explica el 14,5% de la variabilidad del monto de compra"
+      },
+      {
+        "id": "b",
+        "texto": "La pendiente vale 0,145"
+      },
+      {
+        "id": "c",
+        "texto": "Hay un 14,5% de probabilidad de que el modelo sea correcto"
+      },
+      {
+        "id": "d",
+        "texto": "La correlación entre las variables es 0,145"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "El 14,5% de la variabilidad total del monto de compra queda explicada por su relación lineal con el tiempo de navegación; el 85,5% restante se debe a otros factores.",
+    "puntosClave": [],
+    "explicacion": "$R^2$ es la proporción de la variabilidad de $Y$ explicada por el modelo:\n\n$$\nR^2 = \\frac{SC_{reg}}{SC_{total}} = 0{,}145\n$$\n\nEs un valor bajo: aunque la relación sea significativa, el tiempo de navegación predice mal el monto. La correlación sería $r = \\sqrt{0{,}145} \\approx 0{,}38$ (positiva, como la pendiente).",
+    "fuente": "Final 2026, Ej. 4d",
+    "revisada": false
+  },
+  {
+    "id": "reg-005",
+    "tema": "regresion",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "Con la regresión de monto de compra sobre tiempo de navegación (pendiente significativa, $R^2 = 0{,}145$), ¿se puede afirmar que **aumentar** el tiempo de navegación **causa** un aumento en el monto de compra? Justificá.",
+    "respuestaModelo": "No. La regresión muestra una asociación lineal, no una relación causa-efecto. Los datos son observacionales: no se asignó el tiempo de navegación a los clientes, así que puede haber variables de confusión (por ejemplo, el interés previo en comprar hace que alguien navegue más y también gaste más) o incluso causalidad inversa. Para afirmar causalidad haría falta un diseño experimental. Además, con $R^2 = 0{,}145$ la mayor parte de la variabilidad del monto se explica por otros factores.",
+    "puntosClave": [
+      "Asociación (correlación) no implica causalidad",
+      "Los datos son observacionales, no experimentales",
+      "Puede haber variables de confusión o causalidad inversa",
+      "Para hablar de causa haría falta un experimento"
+    ],
+    "fuente": "Final 2026, Ej. 4e",
+    "revisada": false
+  },
+  {
+    "id": "reg-006",
+    "tema": "regresion",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "Mencioná al menos tres supuestos del modelo de regresión lineal simple y explicá por qué son importantes.",
+    "respuestaModelo": "1) Linealidad: la media de $Y$ cambia linealmente con $X$; si la relación es curva, la recta describe mal los datos. 2) Independencia de los errores: cada observación no influye en las otras; si no se cumple, los errores estándar y los p-valores no son confiables. 3) Homocedasticidad: la varianza de los residuos es constante para todo $X$; si la dispersión crece con $X$, las pruebas e intervalos quedan mal calibrados. 4) Normalidad de los residuos: necesaria para que las pruebas $t$ y $F$ y los intervalos sean válidos, sobre todo con muestras chicas. Se verifican mirando los residuos.",
+    "puntosClave": [
+      "Linealidad de la relación",
+      "Independencia de los errores",
+      "Homocedasticidad (varianza constante de los residuos)",
+      "Normalidad de los residuos",
+      "Si no se cumplen, las pruebas y los intervalos no son confiables"
+    ],
+    "fuente": "Final 2026, Ej. 4f; Final 2022, Ej. 3",
+    "revisada": false
+  },
+  {
+    "id": "reg-007",
+    "tema": "regresion",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Un test de correlación de Pearson entre tiempo de recreo y nivel de estrés en R da: t = -13.986, df = 35, p-value = 3.388e-16, cor = -0.921. ¿Cuál es el tamaño de la muestra?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$n = 37$"
+      },
+      {
+        "id": "b",
+        "texto": "$n = 36$"
+      },
+      {
+        "id": "c",
+        "texto": "$n = 35$"
+      },
+      {
+        "id": "d",
+        "texto": "$n = 34$"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "En el test de correlación los grados de libertad son $n - 2$, así que $n = 35 + 2 = 37$.",
+    "puntosClave": [],
+    "explicacion": "El estadístico del test de correlación es\n\n$$\nt = \\frac{r\\sqrt{n-2}}{\\sqrt{1 - r^2}}\n$$\n\ncon $n - 2$ grados de libertad (se estiman dos parámetros). Con df = 35, $n = 37$. La relación es lineal, negativa y muy fuerte ($r \\approx -0{,}92$) y significativa ($p \\approx 3 \\cdot 10^{-16}$).",
+    "fuente": "TP7, Ej. 4",
+    "revisada": false
+  },
+  {
+    "id": "reg-008",
+    "tema": "regresion",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "En un diagrama de dispersión los puntos siguen una recta creciente, pero se separan cada vez más de ella a medida que $X$ aumenta (forma de embudo). ¿Qué caso es?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Relación no lineal"
+      },
+      {
+        "id": "b",
+        "texto": "Relación lineal directa sin homogeneidad de varianzas"
+      },
+      {
+        "id": "c",
+        "texto": "Relación lineal inversa con homogeneidad de varianzas"
+      },
+      {
+        "id": "d",
+        "texto": "Relación lineal directa con homogeneidad de varianzas"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "Relación lineal directa (positiva) con heterocedasticidad: la varianza de $Y$ no es constante, crece con $X$.",
+    "puntosClave": [],
+    "explicacion": "La tendencia creciente indica relación **directa**. Que la dispersión alrededor de la recta aumente con $X$ indica que no se cumple la **homocedasticidad** (varianza constante de los errores), uno de los supuestos del modelo lineal.",
+    "fuente": "Final 2022, Ej. 3",
+    "revisada": false
+  },
+  {
+    "id": "desc-008",
+    "tema": "descriptiva",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Qué es la mediana de un conjunto de datos?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "El valor que más se repite"
+      },
+      {
+        "id": "b",
+        "texto": "El promedio entre el mínimo y el máximo"
+      },
+      {
+        "id": "c",
+        "texto": "La suma de los datos dividida por la cantidad"
+      },
+      {
+        "id": "d",
+        "texto": "El valor que deja el 50% de los datos ordenados por debajo y el 50% por encima"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "Es el valor central de los datos ordenados: deja la mitad por debajo y la mitad por encima. Coincide con $Q_2$.",
+    "puntosClave": [],
+    "explicacion": "La mediana es una medida de posición **resistente**: no cambia aunque un valor extremo sea muy grande. El valor que más se repite es la moda y la suma dividida por $n$ es la media.",
+    "fuente": "Teoría; TP4, Ej. 4",
+    "revisada": false
+  },
+  {
+    "id": "desc-009",
+    "tema": "descriptiva",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Qué mide el rango intercuartil ($RIC = Q_3 - Q_1$)?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "El promedio de las desviaciones respecto de la media"
+      },
+      {
+        "id": "b",
+        "texto": "La amplitud del 50% central de los datos"
+      },
+      {
+        "id": "c",
+        "texto": "La posición del dato central"
+      },
+      {
+        "id": "d",
+        "texto": "La distancia entre el mínimo y el máximo"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "La amplitud del 50% central de los datos. Es una medida de dispersión resistente a valores atípicos.",
+    "puntosClave": [],
+    "explicacion": "Entre $Q_1$ y $Q_3$ está la mitad central de los datos. A diferencia del rango (máximo − mínimo), el RIC no depende de los extremos, por eso se usa junto con la mediana cuando hay atípicos o sesgo.",
+    "fuente": "Teoría; Final 2022, Ej. 1b",
+    "revisada": false
+  },
+  {
+    "id": "desc-010",
+    "tema": "descriptiva",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "En control de calidad se registra el número de transductores defectuosos en cada lote de 50 unidades. ¿Qué tipo de variable es?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Cuantitativa continua"
+      },
+      {
+        "id": "b",
+        "texto": "Cuantitativa discreta"
+      },
+      {
+        "id": "c",
+        "texto": "Cualitativa ordinal"
+      },
+      {
+        "id": "d",
+        "texto": "Cualitativa nominal"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "Cuantitativa discreta: es un conteo y solo toma valores enteros $0, 1, 2, \\dots, 50$.",
+    "puntosClave": [],
+    "explicacion": "Es **cuantitativa** porque es un número con sentido de cantidad, y **discreta** porque proviene de contar: no puede valer, por ejemplo, $2{,}5$. Una variable continua (como una temperatura o un peso) puede tomar cualquier valor en un intervalo.",
+    "fuente": "TP4, Ej. 1a; TP2, Ej. 1",
+    "revisada": false
+  },
+  {
+    "id": "desc-011",
+    "tema": "descriptiva",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Qué gráfico es el adecuado para representar la distribución de frecuencias de una variable **continua**, como el peso de bebés recién nacidos?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Diagrama de torta"
+      },
+      {
+        "id": "b",
+        "texto": "Histograma"
+      },
+      {
+        "id": "c",
+        "texto": "Diagrama de dispersión"
+      },
+      {
+        "id": "d",
+        "texto": "Diagrama de barras separadas"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "El histograma: los datos se agrupan en intervalos de clase contiguos, por eso las barras van pegadas.",
+    "puntosClave": [],
+    "explicacion": "En una variable continua no tiene sentido graficar cada valor por separado: se agrupan en intervalos y se dibuja un **histograma** (barras contiguas). El diagrama de barras separadas es para variables discretas o categóricas, y el de dispersión es para relacionar dos variables.",
+    "fuente": "TP4, Ej. 3",
+    "revisada": false
+  },
+  {
+    "id": "desc-012",
+    "tema": "descriptiva",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Cuál de estos valores **no** forma parte del resumen de cinco números (el que se usa para el diagrama de caja)?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "La mediana"
+      },
+      {
+        "id": "b",
+        "texto": "La media"
+      },
+      {
+        "id": "c",
+        "texto": "El máximo"
+      },
+      {
+        "id": "d",
+        "texto": "El primer cuartil"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "La media. El resumen de cinco números es: mínimo, $Q_1$, mediana, $Q_3$ y máximo.",
+    "puntosClave": [],
+    "explicacion": "El diagrama de caja se construye solo con medidas de posición basadas en el orden de los datos: mínimo, $Q_1$, mediana ($Q_2$), $Q_3$ y máximo. La media no aparece en la caja.",
+    "fuente": "Final 2022, Ej. 1a",
+    "revisada": false
+  },
+  {
+    "id": "desc-013",
+    "tema": "descriptiva",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "En una muestra de 60 lotes se contó el número de transductores defectuosos. Frecuencias: 0 → 7 lotes, 1 → 12, 2 → 13, 3 → 14, 4 → 6, 5 → 3, 6 → 3, 7 → 1, 8 → 1. ¿Qué proporción de lotes no tenía defectuosos y cuál es la moda?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$0{,}117$ y la moda es $3$"
+      },
+      {
+        "id": "b",
+        "texto": "$0{,}07$ y la moda es $3$"
+      },
+      {
+        "id": "c",
+        "texto": "$0{,}233$ y la moda es $2$"
+      },
+      {
+        "id": "d",
+        "texto": "$0{,}117$ y la moda es $0$"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "$7/60 \\approx 0{,}117$ de los lotes no tenía defectuosos; el valor más frecuente es $3$ (14 lotes).",
+    "puntosClave": [],
+    "explicacion": "La frecuencia relativa es la frecuencia absoluta dividida por el total:\n\n$$\nf_r(0) = \\frac{7}{60} \\approx 0{,}117\n$$\n\nLa moda es el valor con mayor frecuencia: $3$ defectuosos, que aparece en 14 lotes.",
+    "fuente": "TP4, Ej. 1b",
+    "revisada": false
+  },
+  {
+    "id": "desc-014",
+    "tema": "descriptiva",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "¿Por qué la mediana es más \"robusta\" que la media? Explicalo con un ejemplo y decí cuándo conviene usar cada una.",
+    "respuestaModelo": "La media usa el valor de todos los datos, así que un valor extremo la arrastra; la mediana solo depende del orden, así que no cambia aunque el extremo sea mucho más grande. Por ejemplo, con producciones $5, 4, 6, 5, 5, 4, 6, 30, 30, 5$ la media es $10$ pero la mediana es $5$, que representa mejor a casi todos los obreros. Conviene la media con distribuciones aproximadamente simétricas y sin atípicos, y la mediana cuando hay sesgo o valores extremos.",
+    "puntosClave": [
+      "La media usa el valor de todos los datos y la afectan los extremos",
+      "La mediana depende solo del orden de los datos",
+      "Ejemplo concreto donde la media se aleja de la mayoría de los datos",
+      "Media: distribuciones simétricas; mediana: sesgo o atípicos"
+    ],
+    "fuente": "TP4, Ej. 4 y 5",
+    "revisada": false
+  },
+  {
+    "id": "desc-015",
+    "tema": "descriptiva",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "Explicá dos formas de detectar si una distribución es simétrica o tiene sesgo positivo o negativo, una con medidas de posición y otra con el diagrama de caja.",
+    "respuestaModelo": "Con medidas de posición: si la media es aproximadamente igual a la mediana, la distribución es simétrica; si la media es mayor que la mediana, tiene sesgo positivo (cola a la derecha); si es menor, sesgo negativo. Con el diagrama de caja: en una distribución simétrica la mediana está en el centro de la caja y los bigotes son parecidos; con sesgo positivo la mediana está más cerca de $Q_1$ y el bigote derecho es más largo; con sesgo negativo, al revés.",
+    "puntosClave": [
+      "Media ≈ mediana: simétrica",
+      "Media > mediana: sesgo positivo; media < mediana: sesgo negativo",
+      "Caja: posición de la mediana dentro de la caja",
+      "Caja: largo relativo de los bigotes (y de cada mitad de la caja)"
+    ],
+    "fuente": "Final 2022, Ej. 1c",
+    "revisada": false
+  },
+  {
+    "id": "desc-016",
+    "tema": "descriptiva",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "¿Qué diferencia hay entre la desviación estándar y el rango intercuartil como medidas de dispersión? ¿Cuándo conviene informar cada una?",
+    "respuestaModelo": "La desviación estándar mide la distancia típica de los datos a la media y usa todos los valores, así que es sensible a atípicos; se informa junto con la media en distribuciones aproximadamente simétricas. El rango intercuartil mide la amplitud del 50% central y no lo afectan los extremos; se informa junto con la mediana cuando hay sesgo o atípicos. Ambas se expresan en las unidades de la variable.",
+    "puntosClave": [
+      "Desviación estándar: distancia típica a la media, usa todos los datos",
+      "Es sensible a valores atípicos",
+      "RIC: amplitud del 50% central, resistente a atípicos",
+      "Desviación estándar con la media; RIC con la mediana"
+    ],
+    "fuente": "TP4, Ej. 5c; Final 2022, Ej. 1",
+    "revisada": false
+  },
+  {
+    "id": "desc-017",
+    "tema": "descriptiva",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "Al hacer un histograma de las precipitaciones de 52 eventos de lluvia, ¿qué cambia si usás 10 intervalos en lugar de 20? ¿Qué problema tiene usar muy pocos o demasiados intervalos?",
+    "respuestaModelo": "Con 10 intervalos cada clase es más ancha: el histograma se ve más suave pero se pierde detalle (pueden quedar ocultos grupos o huecos). Con 20 intervalos se ve más detalle, pero con solo 52 datos muchas clases quedan con 0 o 1 dato y el gráfico se vuelve irregular, mostrando \"ruido\" en lugar de la forma real. Con muy pocos intervalos se esconde la forma; con demasiados, la forma se pierde entre fluctuaciones al azar. La cantidad de intervalos tiene que estar de acuerdo con el tamaño de la muestra.",
+    "puntosClave": [
+      "Pocos intervalos: gráfico más suave pero se pierde detalle",
+      "Muchos intervalos: más detalle pero aparecen clases vacías y ruido",
+      "La forma de la distribución puede verse distinta según los intervalos",
+      "La cantidad de intervalos depende del tamaño de la muestra"
+    ],
+    "fuente": "TP4, Ej. 2a–c",
+    "revisada": false
+  },
+  {
+    "id": "prob-010",
+    "tema": "probabilidad",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Cómo se calcula la probabilidad condicional $P(A \\mid B)$?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$P(A) + P(B) - P(A \\cap B)$"
+      },
+      {
+        "id": "b",
+        "texto": "$\\dfrac{P(A \\cap B)}{P(A)}$"
+      },
+      {
+        "id": "c",
+        "texto": "$P(A) \\cdot P(B)$"
+      },
+      {
+        "id": "d",
+        "texto": "$\\dfrac{P(A \\cap B)}{P(B)}$"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "$P(A \\mid B) = \\dfrac{P(A \\cap B)}{P(B)}$, con $P(B) > 0$.",
+    "puntosClave": [],
+    "explicacion": "Condicionar por $B$ reduce el espacio muestral a $B$: de todo lo que está en $B$, nos interesa la parte que también está en $A$. $P(A)\\,P(B)$ es la conjunta **solo** si son independientes, y la última fórmula es $P(A \\cup B)$.",
+    "fuente": "Teoría; TP1",
+    "revisada": false
+  },
+  {
+    "id": "prob-011",
+    "tema": "probabilidad",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Cuándo dos eventos $A$ y $B$ son independientes?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Cuando $P(A \\cap B) = 0$"
+      },
+      {
+        "id": "b",
+        "texto": "Cuando $P(A \\cap B) = P(A)\\,P(B)$"
+      },
+      {
+        "id": "c",
+        "texto": "Cuando $P(A) + P(B) = 1$"
+      },
+      {
+        "id": "d",
+        "texto": "Cuando $P(A \\mid B) = P(B)$"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "Cuando $P(A \\cap B) = P(A)\\,P(B)$, o lo que es lo mismo, $P(A \\mid B) = P(A)$: saber que ocurrió $B$ no cambia la probabilidad de $A$.",
+    "puntosClave": [],
+    "explicacion": "$P(A \\cap B) = 0$ define eventos **mutuamente excluyentes**, que es otra cosa. $P(A) + P(B) = 1$ ocurre con eventos complementarios.",
+    "fuente": "Teoría; TP1, Ej. 12",
+    "revisada": false
+  },
+  {
+    "id": "prob-012",
+    "tema": "probabilidad",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "$A$ y $B$ son mutuamente excluyentes, con $P(A) = 0{,}29$ y $P(B) = 0{,}43$. ¿Cuánto vale $P(A \\cup B)$?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$0{,}125$"
+      },
+      {
+        "id": "b",
+        "texto": "$0{,}72$"
+      },
+      {
+        "id": "c",
+        "texto": "$0{,}71$"
+      },
+      {
+        "id": "d",
+        "texto": "$0{,}60$"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "Como son excluyentes, $P(A \\cap B) = 0$ y $P(A \\cup B) = 0{,}29 + 0{,}43 = 0{,}72$.",
+    "puntosClave": [],
+    "explicacion": "Regla de la suma:\n\n$$\nP(A \\cup B) = P(A) + P(B) - P(A \\cap B) = 0{,}29 + 0{,}43 - 0 = 0{,}72\n$$\n\n$0{,}71$ es $P(\\bar{A}) = 1 - 0{,}29$.",
+    "fuente": "TP1, Ej. 7b",
+    "revisada": false
+  },
+  {
+    "id": "prob-013",
+    "tema": "probabilidad",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "Si $P(A) = 0{,}29$, ¿cuánto vale la probabilidad del complemento, $P(\\bar{A})$?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$0{,}29$"
+      },
+      {
+        "id": "b",
+        "texto": "$0{,}71$"
+      },
+      {
+        "id": "c",
+        "texto": "No se puede calcular sin $P(B)$"
+      },
+      {
+        "id": "d",
+        "texto": "$0{,}58$"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "$P(\\bar{A}) = 1 - P(A) = 0{,}71$.",
+    "puntosClave": [],
+    "explicacion": "$A$ y $\\bar{A}$ son excluyentes y juntos cubren todo el espacio muestral, así que sus probabilidades suman 1.",
+    "fuente": "TP1, Ej. 7a",
+    "revisada": false
+  },
+  {
+    "id": "prob-014",
+    "tema": "probabilidad",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Se arroja tres veces una moneda equilibrada. ¿Cuál es la probabilidad de obtener exactamente dos caras y una seca?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$1/2$"
+      },
+      {
+        "id": "b",
+        "texto": "$2/3$"
+      },
+      {
+        "id": "c",
+        "texto": "$1/8$"
+      },
+      {
+        "id": "d",
+        "texto": "$3/8$"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "El espacio muestral tiene $2^3 = 8$ resultados igualmente probables y 3 tienen dos caras (CCS, CSC, SCC): $3/8$.",
+    "puntosClave": [],
+    "explicacion": "$E = \\{CCC, CCS, CSC, SCC, CSS, SCS, SSC, SSS\\}$. Los resultados favorables son $CCS$, $CSC$ y $SCC$:\n\n$$\nP = \\frac{3}{8} = 0{,}375\n$$\n\n$1/8$ sería la probabilidad de **un** orden en particular.",
+    "fuente": "TP1, Ej. 1",
+    "revisada": false
+  },
+  {
+    "id": "prob-015",
+    "tema": "probabilidad",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "La probabilidad de que un auto necesite cambio de aceite es $0{,}25$, filtro nuevo $0{,}40$ y ambos $0{,}14$. ¿Cuál es la probabilidad de que necesite **solo uno** de los dos servicios?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$0{,}51$"
+      },
+      {
+        "id": "b",
+        "texto": "$0{,}65$"
+      },
+      {
+        "id": "c",
+        "texto": "$0{,}37$"
+      },
+      {
+        "id": "d",
+        "texto": "$0{,}14$"
+      }
+    ],
+    "respuestaCorrecta": "c",
+    "respuestaModelo": "Solo aceite: $0{,}25 - 0{,}14 = 0{,}11$; solo filtro: $0{,}40 - 0{,}14 = 0{,}26$. Total: $0{,}37$.",
+    "puntosClave": [],
+    "explicacion": "\"Solo uno\" es la unión menos la intersección:\n\n$$\nP(A \\cup F) - P(A \\cap F) = (0{,}25 + 0{,}40 - 0{,}14) - 0{,}14 = 0{,}37\n$$\n\n$0{,}51$ es $P(A \\cup F)$, que incluye los que necesitan ambos.",
+    "fuente": "TP1, Ej. 8a",
+    "revisada": false
+  },
+  {
+    "id": "prob-016",
+    "tema": "probabilidad",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Una bolsa tiene 4 bolas blancas y 3 negras; otra tiene 3 blancas y 5 negras. Se pasa una bola al azar de la primera a la segunda y luego se saca una de la segunda. ¿Cuál es la probabilidad de que sea negra?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$38/63 \\approx 0{,}603$"
+      },
+      {
+        "id": "b",
+        "texto": "$3/7 \\approx 0{,}429$"
+      },
+      {
+        "id": "c",
+        "texto": "$5/8 = 0{,}625$"
+      },
+      {
+        "id": "d",
+        "texto": "$6/9 \\approx 0{,}667$"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "Probabilidad total: $\\frac{4}{7}\\cdot\\frac{5}{9} + \\frac{3}{7}\\cdot\\frac{6}{9} = \\frac{38}{63} \\approx 0{,}603$.",
+    "puntosClave": [],
+    "explicacion": "Se condiciona según qué bola se pasó:\n\n- Pasa blanca ($4/7$): la segunda bolsa queda con 4 blancas y 5 negras → $P(N) = 5/9$.\n- Pasa negra ($3/7$): queda con 3 blancas y 6 negras → $P(N) = 6/9$.\n\n$$\nP(N) = \\frac{4}{7}\\cdot\\frac{5}{9} + \\frac{3}{7}\\cdot\\frac{6}{9} = \\frac{38}{63} \\approx 0{,}603\n$$",
+    "fuente": "TP1, Ej. 11",
+    "revisada": false
+  },
+  {
+    "id": "prob-017",
+    "tema": "probabilidad",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "Explicá la diferencia entre eventos **mutuamente excluyentes** y eventos **independientes**. ¿Pueden ser ambas cosas a la vez?",
+    "respuestaModelo": "Excluyentes significa que no pueden ocurrir juntos: $P(A \\cap B) = 0$. Independientes significa que la ocurrencia de uno no cambia la probabilidad del otro: $P(A \\cap B) = P(A)\\,P(B)$. Si ambos tienen probabilidad positiva no pueden ser las dos cosas: si son excluyentes, saber que ocurrió $A$ implica que $B$ no ocurrió, lo cual es información, así que no son independientes ($0 \\neq P(A)\\,P(B)$).",
+    "puntosClave": [
+      "Excluyentes: $P(A \\cap B) = 0$, no ocurren juntos",
+      "Independientes: $P(A \\cap B) = P(A)\\,P(B)$",
+      "Con probabilidades positivas no pueden ser ambas cosas",
+      "Ser excluyentes da información sobre el otro evento"
+    ],
+    "fuente": "TP1, Ej. 7e",
+    "revisada": false
+  },
+  {
+    "id": "prob-018",
+    "tema": "probabilidad",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "¿Para qué sirve el Teorema de Bayes? Explicá qué son la probabilidad a priori y a posteriori con el ejemplo de los conductores (80% clase B, que tienen menos accidentes).",
+    "respuestaModelo": "Bayes permite \"invertir\" una condicional: conociendo $P(\\text{Acc.} \\mid B)$ calculamos $P(B \\mid \\text{Acc.})$. La probabilidad a priori es la que tenemos antes de la información ($P(B) = 0{,}80$) y la a posteriori es la que actualizamos después de saber que hubo un accidente ($P(B \\mid \\text{Acc.}) \\approx 0{,}571$). Para calcularla se necesita la probabilidad total del accidente, que suma los aportes de todas las clases. Bajó porque los de clase B tienen menos accidentes, pero sigue siendo alta porque son la mayoría.",
+    "puntosClave": [
+      "Invierte la condicional: de $P(\\text{Acc.} \\mid B)$ a $P(B \\mid \\text{Acc.})$",
+      "A priori: antes de la información ($P(B) = 0{,}80$)",
+      "A posteriori: actualizada con la información observada",
+      "El denominador es la probabilidad total"
+    ],
+    "fuente": "TP1, Ej. 14 y 15",
+    "revisada": false
+  },
+  {
+    "id": "prob-019",
+    "tema": "probabilidad",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "En una tabla de doble entrada de probabilidades, explicá la diferencia entre probabilidad **conjunta**, **marginal** y **condicional**, y cómo se obtiene cada una de la tabla.",
+    "respuestaModelo": "La conjunta, $P(A \\cap B)$, es la probabilidad de que ocurran los dos eventos a la vez: es cada celda interior de la tabla. La marginal, $P(A)$, es la probabilidad de un solo evento sin importar el otro: es el total de una fila o columna (suma de las conjuntas). La condicional, $P(A \\mid B)$, es la probabilidad de $A$ sabiendo que ocurrió $B$: se divide la celda conjunta por el total marginal de $B$. Todas las celdas conjuntas suman 1.",
+    "puntosClave": [
+      "Conjunta: una celda de la tabla",
+      "Marginal: total de una fila o columna",
+      "Condicional: celda dividida por el total del evento condicionante",
+      "Las conjuntas suman 1"
+    ],
+    "fuente": "Final 2026, Ej. 1; TP1, Ej. 5",
+    "revisada": false
+  },
+  {
+    "id": "tcl-008",
+    "tema": "muestreo-tcl",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Qué dice el Teorema Central del Límite?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Que la media muestral siempre es igual a la media poblacional"
+      },
+      {
+        "id": "b",
+        "texto": "Que toda población grande tiene distribución normal"
+      },
+      {
+        "id": "c",
+        "texto": "Que la distribución de la media muestral $\\bar{X}$ se aproxima a una normal a medida que $n$ crece, sin importar la forma de la población"
+      },
+      {
+        "id": "d",
+        "texto": "Que la varianza de $\\bar{X}$ aumenta con $n$"
+      }
+    ],
+    "respuestaCorrecta": "c",
+    "respuestaModelo": "Para $n$ suficientemente grande, $\\bar{X}$ tiene distribución aproximadamente normal con media $\\mu$ y desviación $\\sigma/\\sqrt{n}$, cualquiera sea la forma de la población.",
+    "puntosClave": [],
+    "explicacion": "El TCL habla de la distribución de las **medias muestrales**, no de la población: la población puede ser asimétrica y aun así $\\bar{X}$ es aproximadamente normal. En la práctica suele bastar con $n \\ge 30$. Si la población ya es normal, $\\bar{X}$ es normal para cualquier $n$.",
+    "fuente": "Teoría; Final 2022, Ej. 2",
+    "revisada": false
+  },
+  {
+    "id": "tcl-009",
+    "tema": "muestreo-tcl",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "Si $X$ es normal con media $\\mu$ y desviación $\\sigma$, ¿qué porcentaje aproximado de los valores queda entre $\\mu - 2\\sigma$ y $\\mu + 2\\sigma$?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "68%"
+      },
+      {
+        "id": "b",
+        "texto": "95%"
+      },
+      {
+        "id": "c",
+        "texto": "99,7%"
+      },
+      {
+        "id": "d",
+        "texto": "50%"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "Aproximadamente el 95% ($0{,}9545$).",
+    "puntosClave": [],
+    "explicacion": "Regla empírica de la normal:\n\n- $\\mu \\pm \\sigma$: $\\approx 68\\%$\n- $\\mu \\pm 2\\sigma$: $\\approx 95\\%$\n- $\\mu \\pm 3\\sigma$: $\\approx 99{,}7\\%$",
+    "fuente": "TP3, Ej. 8",
+    "revisada": false
+  },
+  {
+    "id": "tcl-010",
+    "tema": "muestreo-tcl",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Qué indica el valor $z = \\dfrac{x - \\mu}{\\sigma}$ de una observación?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "La diferencia entre la observación y la mediana"
+      },
+      {
+        "id": "b",
+        "texto": "La probabilidad de obtener esa observación"
+      },
+      {
+        "id": "c",
+        "texto": "A cuántas desviaciones estándar está la observación de la media"
+      },
+      {
+        "id": "d",
+        "texto": "El porcentaje de datos menores que la observación"
+      }
+    ],
+    "respuestaCorrecta": "c",
+    "respuestaModelo": "Cuántas desviaciones estándar está $x$ por encima (z positivo) o por debajo (z negativo) de la media.",
+    "puntosClave": [],
+    "explicacion": "Estandarizar transforma cualquier normal $N(\\mu, \\sigma)$ en la normal estándar $N(0, 1)$, y así se pueden usar las tablas. El valor $z$ no es una probabilidad: la probabilidad se busca en la tabla a partir de $z$.",
+    "fuente": "TP3, Ej. 9",
+    "revisada": false
+  },
+  {
+    "id": "tcl-011",
+    "tema": "muestreo-tcl",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Cuál es la diferencia entre un **parámetro** y un **estadístico**?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "El parámetro se calcula con la muestra; el estadístico describe a la población"
+      },
+      {
+        "id": "b",
+        "texto": "El estadístico es siempre más preciso que el parámetro"
+      },
+      {
+        "id": "c",
+        "texto": "El parámetro describe a la población y es fijo; el estadístico se calcula con la muestra y varía de muestra en muestra"
+      },
+      {
+        "id": "d",
+        "texto": "Son sinónimos"
+      }
+    ],
+    "respuestaCorrecta": "c",
+    "respuestaModelo": "El parámetro ($\\mu$, $\\sigma$) es un valor fijo, generalmente desconocido, de la población. El estadístico ($\\bar{x}$, $s$) se calcula con los datos de la muestra y cambia según la muestra.",
+    "puntosClave": [],
+    "explicacion": "Como el estadístico varía de muestra en muestra, tiene su propia distribución: la **distribución muestral**. Por ejemplo, $\\bar{X}$ tiene media $\\mu$ y desviación $\\sigma/\\sqrt{n}$.",
+    "fuente": "Teoría; TP5, Ej. 2",
+    "revisada": false
+  },
+  {
+    "id": "tcl-012",
+    "tema": "muestreo-tcl",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Cuándo se dice que un estimador $\\hat{\\theta}$ es **insesgado**?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Cuando su varianza es cero"
+      },
+      {
+        "id": "b",
+        "texto": "Cuando $E(\\hat{\\theta}) = \\theta$"
+      },
+      {
+        "id": "c",
+        "texto": "Cuando $\\hat{\\theta} = \\theta$ en toda muestra"
+      },
+      {
+        "id": "d",
+        "texto": "Cuando usa todos los datos de la muestra"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "Cuando su valor esperado es igual al parámetro que estima: $E(\\hat{\\theta}) = \\theta$.",
+    "puntosClave": [],
+    "explicacion": "Insesgado significa que \"en promedio\" acierta, aunque en una muestra particular pueda errar. Entre dos estimadores insesgados, es más **eficiente** el de menor varianza.",
+    "fuente": "TP5, Ej. 1",
+    "revisada": false
+  },
+  {
+    "id": "tcl-013",
+    "tema": "muestreo-tcl",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "$X$ es normal con $\\mu = 400$ y $\\sigma = 100$. ¿Cuál es la probabilidad de que tome valores mayores que $300$?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Aproximadamente $0{,}977$"
+      },
+      {
+        "id": "b",
+        "texto": "Aproximadamente $0{,}159$"
+      },
+      {
+        "id": "c",
+        "texto": "Aproximadamente $0{,}5$"
+      },
+      {
+        "id": "d",
+        "texto": "Aproximadamente $0{,}841$"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "$z = (300 - 400)/100 = -1$; $P(Z > -1) = 1 - 0{,}1587 \\approx 0{,}841$.",
+    "puntosClave": [],
+    "explicacion": "$$\nP(X > 300) = P\\left(Z > \\frac{300 - 400}{100}\\right) = P(Z > -1) \\approx 0{,}841\n$$\n\n$0{,}159$ es $P(Z < -1)$, la cola contraria.",
+    "fuente": "TP3, Ej. 9b",
+    "revisada": false
+  },
+  {
+    "id": "tcl-014",
+    "tema": "muestreo-tcl",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "La vida de unas lámparas es normal con $\\mu = 1000$ h y $\\sigma = 50$ h. En una muestra de 10000 lámparas, ¿cuántas se espera que se quemen antes de las 900 h?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Aproximadamente 9772"
+      },
+      {
+        "id": "b",
+        "texto": "Aproximadamente 1587"
+      },
+      {
+        "id": "c",
+        "texto": "Aproximadamente 228"
+      },
+      {
+        "id": "d",
+        "texto": "Aproximadamente 500"
+      }
+    ],
+    "respuestaCorrecta": "c",
+    "respuestaModelo": "$z = (900 - 1000)/50 = -2$; $P(Z < -2) \\approx 0{,}0228$; $10000 \\cdot 0{,}0228 \\approx 228$ lámparas.",
+    "puntosClave": [],
+    "explicacion": "$$\nP(X < 900) = P(Z < -2) \\approx 0{,}0228 \\qquad 10000 \\cdot 0{,}0228 \\approx 228\n$$\n\n$9772$ son las que duran **más** de 900 h y $1587$ correspondería a $z = -1$.",
+    "fuente": "TP3, Ej. 11b",
+    "revisada": false
+  },
+  {
+    "id": "tcl-015",
+    "tema": "muestreo-tcl",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "$X$ es normal con $\\sigma = 200$ y se sabe que $P(X \\le 1200) = 0{,}8413$. ¿Cuánto vale la media?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$1000$"
+      },
+      {
+        "id": "b",
+        "texto": "$1400$"
+      },
+      {
+        "id": "c",
+        "texto": "$1200$"
+      },
+      {
+        "id": "d",
+        "texto": "$800$"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "$0{,}8413$ corresponde a $z = 1$; entonces $1200 = \\mu + 1 \\cdot 200$ y $\\mu = 1000$.",
+    "puntosClave": [],
+    "explicacion": "En la tabla, $P(Z \\le 1) = 0{,}8413$. Despejando de la estandarización:\n\n$$\n1 = \\frac{1200 - \\mu}{200} \\quad \\Rightarrow \\quad \\mu = 1000\n$$",
+    "fuente": "TP3, Ej. 12",
+    "revisada": false
+  },
+  {
+    "id": "tcl-016",
+    "tema": "muestreo-tcl",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Para estimar $\\mu$ con muestras de $n = 3$ ($\\sigma^2 = 1$) se proponen $U_1 = \\frac{1}{3}x_1 + \\frac{1}{3}x_2 + \\frac{1}{3}x_3$, $U_2 = \\frac{1}{4}x_1 + \\frac{1}{2}x_2 + \\frac{1}{4}x_3$ y $U_3 = \\frac{1}{8}x_1 + \\frac{3}{8}x_2 + \\frac{1}{2}x_3$. Los tres son insesgados. ¿Cuál es el más eficiente?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$U_2$ (varianza $3/8$)"
+      },
+      {
+        "id": "b",
+        "texto": "Los tres son igual de eficientes"
+      },
+      {
+        "id": "c",
+        "texto": "$U_3$ (varianza $13/32$)"
+      },
+      {
+        "id": "d",
+        "texto": "$U_1$ (varianza $1/3$)"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "$U_1$, la media muestral: tiene la menor varianza ($1/3 \\approx 0{,}333$, contra $0{,}375$ y $0{,}406$).",
+    "puntosClave": [],
+    "explicacion": "Con observaciones independientes, $Var\\left(\\sum a_i x_i\\right) = \\sigma^2 \\sum a_i^2$:\n\n- $U_1$: $3 \\cdot \\frac{1}{9} = \\frac{1}{3}$\n- $U_2$: $\\frac{1}{16} + \\frac{1}{4} + \\frac{1}{16} = \\frac{3}{8}$\n- $U_3$: $\\frac{1}{64} + \\frac{9}{64} + \\frac{16}{64} = \\frac{13}{32}$\n\nSon insesgados porque los coeficientes suman 1. El más eficiente es el de menor varianza: la media muestral.",
+    "fuente": "TP5, Ej. 1a",
+    "revisada": false
+  },
+  {
+    "id": "tcl-017",
+    "tema": "muestreo-tcl",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "¿Qué diferencia hay entre la desviación estándar de la población ($\\sigma$) y el error estándar de la media ($\\sigma/\\sqrt{n}$)? ¿Cuál usás para calcular la probabilidad de un dato individual y cuál para la de una media muestral?",
+    "respuestaModelo": "$\\sigma$ mide cuánto varían los datos individuales alrededor de $\\mu$. El error estándar mide cuánto varían las medias de muestras de tamaño $n$ alrededor de $\\mu$; es más chico porque al promediar los valores extremos se compensan. Para la probabilidad de un dato individual se usa $\\sigma$; para la de $\\bar{X}$ se usa $\\sigma/\\sqrt{n}$. Confundirlos es un error típico: por ejemplo, con $\\mu = 100$, $\\sigma = 21$ y $n = 49$, $P(94 < \\bar{X} < 106) \\approx 0{,}954$, pero usando $\\sigma$ daría $\\approx 0{,}225$.",
+    "puntosClave": [
+      "$\\sigma$: variabilidad de los datos individuales",
+      "$\\sigma/\\sqrt{n}$: variabilidad de las medias muestrales",
+      "El error estándar es menor y disminuye con n",
+      "Dato individual → $\\sigma$; media muestral → $\\sigma/\\sqrt{n}$"
+    ],
+    "fuente": "Final 2022, Ej. 2; TP5, Ej. 6 y 7",
+    "revisada": false
+  },
+  {
+    "id": "tcl-018",
+    "tema": "muestreo-tcl",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "¿Por qué el TCL permite usar la distribución normal para $\\bar{X}$ aunque la población no sea normal? ¿Qué condición se necesita y qué pasa si la población ya es normal?",
+    "respuestaModelo": "Porque al promediar muchas observaciones independientes los desvíos en distintas direcciones se compensan, y la distribución de la media se vuelve aproximadamente normal cualquiera sea la forma de la población. La condición es que $n$ sea suficientemente grande (en la práctica, $n \\ge 30$; si la población es muy asimétrica puede hacer falta más). Si la población ya es normal, $\\bar{X}$ es exactamente normal para cualquier $n$, sin necesidad del TCL.",
+    "puntosClave": [
+      "Promediar compensa los desvíos y la distribución de la media se vuelve normal",
+      "Vale para cualquier forma de la población",
+      "Condición: $n$ grande (regla práctica $n \\ge 30$)",
+      "Si la población es normal, $\\bar{X}$ es normal para cualquier $n$"
+    ],
+    "fuente": "Final 2022, Ej. 2a",
+    "revisada": false
+  },
+  {
+    "id": "tcl-019",
+    "tema": "muestreo-tcl",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "Dos instrumentos tienen duración normal: A con $\\mu = 40$ h y $\\sigma = 36$ h; B con $\\mu = 45$ h y $\\sigma = 9$ h. Para usarlos más de 45 h conviene B ($0{,}50$ contra $0{,}445$), pero para más de 48 h conviene A ($0{,}412$ contra $0{,}369$). ¿Por qué se invierte la elección?",
+    "respuestaModelo": "Porque A tiene una dispersión mucho mayor. B está muy concentrado alrededor de 45 h: es muy confiable cerca de su media, pero tiene poca probabilidad en la cola derecha, que cae rápido. A tiene una media menor pero su curva es mucho más ancha, así que asigna más probabilidad a duraciones largas. Cuando el umbral se aleja de la media de B (48 h está a $1/3$ de desvío de B pero solo a $0{,}22$ desvíos de la media de A), pesa más la dispersión que la media. La elección depende de la media y de la desviación estándar a la vez.",
+    "puntosClave": [
+      "B está concentrado cerca de su media (σ chica)",
+      "A tiene σ grande: más probabilidad en las colas",
+      "Comparar los valores $z$ de cada umbral en cada instrumento",
+      "La elección depende de la media y de la dispersión, no solo de la media"
+    ],
+    "fuente": "TP3, Ej. 14",
+    "revisada": false
+  },
+  {
+    "id": "th-009",
+    "tema": "test-hipotesis",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Qué es el error de tipo I en una prueba de hipótesis?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Rechazar $H_0$ cuando es verdadera"
+      },
+      {
+        "id": "b",
+        "texto": "Rechazar $H_1$ cuando es verdadera"
+      },
+      {
+        "id": "c",
+        "texto": "No rechazar $H_0$ cuando es falsa"
+      },
+      {
+        "id": "d",
+        "texto": "Equivocarse al calcular el estadístico"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "Rechazar la hipótesis nula cuando en realidad es verdadera. Su probabilidad es $\\alpha$.",
+    "puntosClave": [],
+    "explicacion": "- Rechazo $H_0$ siendo verdadera: **error tipo I** (probabilidad $\\alpha$).\n- No rechazo $H_0$ siendo falsa: **error tipo II** (probabilidad $\\beta$).\n- Rechazo $H_0$ siendo falsa, o no la rechazo siendo verdadera: decisión correcta.",
+    "fuente": "Teoría; TP6, Ej. 1e",
+    "revisada": false
+  },
+  {
+    "id": "th-010",
+    "tema": "test-hipotesis",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Qué es el error de tipo II?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Rechazar $H_0$ cuando es verdadera"
+      },
+      {
+        "id": "b",
+        "texto": "No rechazar $H_0$ cuando es falsa"
+      },
+      {
+        "id": "c",
+        "texto": "Elegir mal el nivel de significación"
+      },
+      {
+        "id": "d",
+        "texto": "Usar la distribución equivocada"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "No rechazar $H_0$ cuando en realidad es falsa. Su probabilidad se llama $\\beta$.",
+    "puntosClave": [],
+    "explicacion": "El error tipo II es \"no detectar\" un efecto que existe. Solo puede ocurrir cuando la decisión fue **no rechazar**. Para un mismo $n$, si se achica $\\alpha$ aumenta $\\beta$.",
+    "fuente": "Teoría; TP6",
+    "revisada": false
+  },
+  {
+    "id": "th-011",
+    "tema": "test-hipotesis",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Qué representa el nivel de significación $\\alpha$ de una prueba?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "La probabilidad máxima de cometer error de tipo I que se acepta"
+      },
+      {
+        "id": "b",
+        "texto": "El valor del estadístico de prueba"
+      },
+      {
+        "id": "c",
+        "texto": "La probabilidad de cometer error de tipo II"
+      },
+      {
+        "id": "d",
+        "texto": "La probabilidad de que $H_0$ sea verdadera"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "La probabilidad de rechazar $H_0$ siendo verdadera (error tipo I) que el investigador está dispuesto a aceptar; se fija antes de mirar los datos.",
+    "puntosClave": [],
+    "explicacion": "Con $\\alpha = 0{,}05$, si $H_0$ fuera cierta y repitiéramos el estudio muchas veces, la rechazaríamos por error en un 5% de los casos. No es la probabilidad de que $H_0$ sea verdadera.",
+    "fuente": "Teoría; TP6",
+    "revisada": false
+  },
+  {
+    "id": "th-012",
+    "tema": "test-hipotesis",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "Al plantear una prueba de hipótesis, ¿qué va en la hipótesis nula $H_0$?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Lo que el investigador quiere demostrar"
+      },
+      {
+        "id": "b",
+        "texto": "Siempre una desigualdad estricta"
+      },
+      {
+        "id": "c",
+        "texto": "El valor observado en la muestra"
+      },
+      {
+        "id": "d",
+        "texto": "La igualdad o el valor de referencia (lo que se mantiene si no hay evidencia en contra)"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "La afirmación de referencia, que siempre incluye la igualdad (por ejemplo $\\mu = 40000$ o $\\mu_d = 0$). Lo que se quiere demostrar va en $H_1$.",
+    "puntosClave": [],
+    "explicacion": "La prueba busca evidencia **contra** $H_0$. Por eso lo que queremos probar va en $H_1$ y solo lo \"demostramos\" si los datos son muy improbables bajo $H_0$. Las hipótesis se plantean sobre parámetros ($\\mu$), nunca sobre el valor de la muestra ($\\bar{x}$).",
+    "fuente": "TP6, Ej. 1b; Final 2026, Ej. 2c",
+    "revisada": false
+  },
+  {
+    "id": "th-013",
+    "tema": "test-hipotesis",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "La longitud de unos tornillos ha sido de $\\mu = 2$ pulgadas con $\\sigma = 0{,}5$. Una muestra de 64 tornillos da $\\bar{x} = 2{,}15$. Con 95% de confianza (bilateral), ¿el proceso está bajo control?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "No: $z = 2{,}4 > 1{,}96$, se rechaza $H_0: \\mu = 2$"
+      },
+      {
+        "id": "b",
+        "texto": "No: porque $2{,}15 \\neq 2$"
+      },
+      {
+        "id": "c",
+        "texto": "Sí: $z = 0{,}3 < 1{,}96$, no se rechaza $H_0$"
+      },
+      {
+        "id": "d",
+        "texto": "Sí: $z = 2{,}4 < 2{,}58$, no se rechaza $H_0$"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "$z = \\dfrac{2{,}15 - 2}{0{,}5/\\sqrt{64}} = 2{,}4$. Como $|z| > 1{,}96$ se rechaza $H_0$: el proceso no está bajo control.",
+    "puntosClave": [],
+    "explicacion": "Con $\\sigma$ conocida se usa $Z$:\n\n$$\nz = \\frac{\\bar{x} - \\mu_0}{\\sigma/\\sqrt{n}} = \\frac{0{,}15}{0{,}0625} = 2{,}4\n$$\n\n$0{,}3$ sale de dividir por $\\sigma$ en lugar del error estándar. $2{,}58$ es el valor crítico para el 99%, no para el 95%. Que $2{,}15 \\neq 2$ no alcanza: hay que ver si la diferencia es mayor que la esperable por azar.",
+    "fuente": "TP6, Ej. 2",
+    "revisada": false
+  },
+  {
+    "id": "th-014",
+    "tema": "test-hipotesis",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Con una muestra de 100 baterías la duración media es 45 meses con $s = 5$ meses. ¿Cuál es el intervalo de confianza del 95% para la duración media?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$(44{,}02;\\ 45{,}98)$ meses"
+      },
+      {
+        "id": "b",
+        "texto": "$(35{,}2;\\ 54{,}8)$ meses"
+      },
+      {
+        "id": "c",
+        "texto": "$(44{,}18;\\ 45{,}82)$ meses"
+      },
+      {
+        "id": "d",
+        "texto": "$(44{,}5;\\ 45{,}5)$ meses"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "$45 \\pm 1{,}96 \\cdot \\dfrac{5}{\\sqrt{100}} = 45 \\pm 0{,}98$, o sea $(44{,}02;\\ 45{,}98)$.",
+    "puntosClave": [],
+    "explicacion": "Con $n = 100$ grande se usa $z_{0{,}975} = 1{,}96$:\n\n$$\n\\bar{x} \\pm z \\frac{s}{\\sqrt{n}} = 45 \\pm 1{,}96 \\cdot 0{,}5 = 45 \\pm 0{,}98\n$$\n\n$(35{,}2;\\ 54{,}8)$ sale de olvidarse de dividir por $\\sqrt{n}$, y $(44{,}18;\\ 45{,}82)$ usa $1{,}645$ (90%).",
+    "fuente": "TP5, Ej. 17",
+    "revisada": false
+  },
+  {
+    "id": "th-015",
+    "tema": "test-hipotesis",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Se quiere estimar el promedio de kilómetros semanales recorridos por camiones con un error máximo de 15 km, 95% de confianza y $\\sigma = 120$ km. ¿Qué tamaño de muestra hace falta?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "245"
+      },
+      {
+        "id": "b",
+        "texto": "174"
+      },
+      {
+        "id": "c",
+        "texto": "16"
+      },
+      {
+        "id": "d",
+        "texto": "246"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "$n = \\left(\\dfrac{1{,}96 \\cdot 120}{15}\\right)^2 \\approx 245{,}9$, que se redondea **hacia arriba**: $n = 246$.",
+    "puntosClave": [],
+    "explicacion": "Despejando $n$ del error $E = z\\,\\sigma/\\sqrt{n}$:\n\n$$\nn = \\left(\\frac{z\\,\\sigma}{E}\\right)^2 = \\left(\\frac{1{,}96 \\cdot 120}{15}\\right)^2 \\approx 245{,}9\n$$\n\nSiempre se redondea hacia arriba: con 245 el error superaría los 15 km. $174$ usa $z = 1{,}645$ (90%).",
+    "fuente": "TP5, Ej. 22",
+    "revisada": false
+  },
+  {
+    "id": "th-016",
+    "tema": "test-hipotesis",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Una máquina fabricaba arandelas de 0,27 mm de grosor medio. Una muestra de 9 da $\\bar{x} = 0{,}35$ mm y $s = 0{,}08$ mm. Con $\\alpha = 0{,}05$ (bilateral), ¿la máquina sigue en buenas condiciones?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Sí: $t = 1$ con 8 gl; no se rechaza $H_0$"
+      },
+      {
+        "id": "b",
+        "texto": "No se puede hacer la prueba con $n = 9$"
+      },
+      {
+        "id": "c",
+        "texto": "No: $t = 3$ con 8 gl, mayor que $2{,}306$; se rechaza $H_0$"
+      },
+      {
+        "id": "d",
+        "texto": "Sí: $t = 3$ es menor que el valor crítico $3{,}355$"
+      }
+    ],
+    "respuestaCorrecta": "c",
+    "respuestaModelo": "$t = \\dfrac{0{,}35 - 0{,}27}{0{,}08/3} = 3$; con 8 gl el crítico es $2{,}306$, así que se rechaza $H_0$: el grosor medio cambió.",
+    "puntosClave": [],
+    "explicacion": "Con $\\sigma$ desconocida y $n$ chico se usa la $t$ con $n - 1 = 8$ gl (suponiendo grosores aproximadamente normales):\n\n$$\nt = \\frac{0{,}08}{0{,}08/\\sqrt{9}} = 3 > t_{0{,}975;\\,8} \\approx 2{,}306\n$$\n\n$t = 1$ sale de no dividir $s$ por $\\sqrt{n}$; $3{,}355$ es el crítico para $\\alpha = 0{,}01$.",
+    "fuente": "TP6, Ej. 4",
+    "revisada": false
+  },
+  {
+    "id": "th-017",
+    "tema": "test-hipotesis",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "Un intervalo de confianza del 95% para la duración media de baterías es $(44{,}02;\\ 45{,}98)$ meses. ¿Cómo se interpreta correctamente? ¿Es correcto decir \"hay 95% de probabilidad de que $\\mu$ esté en este intervalo\"?",
+    "respuestaModelo": "El 95% se refiere al **método**: si tomáramos muchas muestras y construyéramos un intervalo con cada una, alrededor del 95% de esos intervalos contendría a la verdadera $\\mu$. Para este intervalo concreto, $\\mu$ (que es fija) está o no está adentro; no tiene probabilidad. Por eso es más correcto decir \"tenemos 95% de confianza en que el intervalo contiene a $\\mu$\". Tampoco significa que el 95% de las baterías dure entre esos valores: el intervalo es para la media, no para baterías individuales.",
+    "puntosClave": [
+      "El 95% se refiere al procedimiento, no a este intervalo en particular",
+      "$\\mu$ es fija: está o no está en el intervalo",
+      "De muchos intervalos, ~95% contendría a μ",
+      "El intervalo es para la media, no para valores individuales"
+    ],
+    "fuente": "TP5, Ej. 17–21",
+    "revisada": false
+  },
+  {
+    "id": "th-018",
+    "tema": "test-hipotesis",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "¿Cuándo se usa la distribución normal ($Z$) y cuándo la $t$ de Student para hacer inferencia sobre una media? Justificá.",
+    "respuestaModelo": "Si la desviación estándar poblacional $\\sigma$ es conocida, el estadístico $(\\bar{x} - \\mu)/(\\sigma/\\sqrt{n})$ es normal estándar (exacto si la población es normal, aproximado por TCL si $n$ es grande). Si $\\sigma$ es desconocida y se estima con $s$, el estadístico sigue una $t$ con $n - 1$ gl, que tiene colas más pesadas para reflejar la incertidumbre extra de estimar $\\sigma$; con $n$ chico se requiere que la población sea aproximadamente normal. Cuando $n$ es grande, la $t$ se parece mucho a la normal y ambas dan resultados casi iguales.",
+    "puntosClave": [
+      "$\\sigma$ conocida → $Z$",
+      "$\\sigma$ desconocida, estimada con $s$ → $t$ con $n - 1$ gl",
+      "La t tiene colas más pesadas por la incertidumbre de estimar σ",
+      "Con n chico se necesita población aproximadamente normal",
+      "Con n grande la t se parece a la normal"
+    ],
+    "fuente": "TP5, Ej. 9; TP6, Ej. 1–4",
+    "revisada": false
+  },
+  {
+    "id": "th-019",
+    "tema": "test-hipotesis",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "¿Por qué para comparar el tiempo de respuesta antes y después de una optimización (medido en las mismas ejecuciones) se usa una prueba para muestras **pareadas** y no una para muestras independientes?",
+    "respuestaModelo": "Porque cada medición \"antes\" está vinculada con su \"después\" (es la misma ejecución), así que las dos muestras no son independientes. Al trabajar con las diferencias $d_i$ se elimina la variabilidad entre ejecuciones (unas son más lentas que otras por otras causas) y queda solo el efecto de la optimización. Eso hace la prueba más precisa. Usar una prueba para muestras independientes violaría el supuesto de independencia y mezclaría la variabilidad entre ejecuciones con el efecto buscado.",
+    "puntosClave": [
+      "Las mediciones están vinculadas de a pares (misma ejecución)",
+      "Se analiza una sola muestra: las diferencias $d_i$",
+      "Se elimina la variabilidad entre unidades y la prueba es más precisa",
+      "Las muestras no son independientes, así que la prueba independiente no corresponde"
+    ],
+    "fuente": "Final 2026, Ej. 2; TP6, Ej. 7",
+    "revisada": false
+  },
+  {
+    "id": "th-020",
+    "tema": "test-hipotesis",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "Explicá la regla de decisión con el p-valor. Si $P > \\alpha$, ¿es correcto decir que \"se acepta $H_0$\" o que \"$H_0$ es verdadera\"?",
+    "respuestaModelo": "Si $P \\le \\alpha$ se rechaza $H_0$: el resultado observado sería muy improbable si $H_0$ fuera cierta. Si $P > \\alpha$ no se rechaza $H_0$, pero eso no prueba que sea verdadera: solo significa que los datos no aportan evidencia suficiente en su contra (puede que el efecto exista y la muestra sea chica). Por eso se dice \"no se rechaza\" en lugar de \"se acepta\". Además, al no rechazar se puede estar cometiendo un error de tipo II.",
+    "puntosClave": [
+      "$P \\le \\alpha$: se rechaza $H_0$",
+      "$P > \\alpha$: no se rechaza $H_0$",
+      "No rechazar no prueba que H0 sea verdadera (falta de evidencia)",
+      "Al no rechazar se puede cometer error tipo II"
+    ],
+    "fuente": "Final 2026, Ej. 2h; Final 2022, Ej. 4",
+    "revisada": false
+  },
+  {
+    "id": "poi-008",
+    "tema": "poisson",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "Si $X \\sim \\text{Poisson}(\\lambda)$, ¿cuánto valen su media y su varianza?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Media $\\lambda$ y varianza $\\lambda^2$"
+      },
+      {
+        "id": "b",
+        "texto": "Media $\\lambda$ y varianza $\\sqrt{\\lambda}$"
+      },
+      {
+        "id": "c",
+        "texto": "Ambas valen $\\lambda$"
+      },
+      {
+        "id": "d",
+        "texto": "Media $n\\,p$ y varianza $n\\,p\\,(1-p)$"
+      }
+    ],
+    "respuestaCorrecta": "c",
+    "respuestaModelo": "$E(X) = Var(X) = \\lambda$.",
+    "puntosClave": [],
+    "explicacion": "Es una propiedad característica de la Poisson: la media y la varianza coinciden. Por eso, si en datos de conteo la varianza es muy distinta de la media, la Poisson puede no ser un buen modelo. $np$ y $np(1-p)$ son de la binomial.",
+    "fuente": "Teoría; TP2",
+    "revisada": false
+  },
+  {
+    "id": "poi-009",
+    "tema": "poisson",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Qué cuenta una variable con distribución de Poisson?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "La cantidad de eventos que ocurren en un intervalo fijo de tiempo o espacio"
+      },
+      {
+        "id": "b",
+        "texto": "El tiempo que pasa hasta el primer evento"
+      },
+      {
+        "id": "c",
+        "texto": "La proporción de eventos favorables"
+      },
+      {
+        "id": "d",
+        "texto": "La cantidad de éxitos en un número fijo de ensayos"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "La cantidad de eventos que ocurren al azar en un intervalo fijo (de tiempo, longitud, área, volumen…).",
+    "puntosClave": [],
+    "explicacion": "Ejemplos del material: solicitudes a un servidor por minuto, huracanes por año, camiones que llegan por día, glóbulos rojos por mm³. Los éxitos en $n$ ensayos fijos son binomiales, y el tiempo hasta el primer evento es una variable continua.",
+    "fuente": "Final 2026, Ej. 3; TP2",
+    "revisada": false
+  },
+  {
+    "id": "poi-010",
+    "tema": "poisson",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Qué valores puede tomar una variable $X \\sim \\text{Poisson}(\\lambda)$?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Cualquier entero no negativo: $0, 1, 2, \\dots$ sin máximo"
+      },
+      {
+        "id": "b",
+        "texto": "Enteros de $0$ a $n$"
+      },
+      {
+        "id": "c",
+        "texto": "Cualquier número real positivo"
+      },
+      {
+        "id": "d",
+        "texto": "Enteros de $0$ a $\\lambda$"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "Todos los enteros $0, 1, 2, 3, \\dots$, sin límite superior.",
+    "puntosClave": [],
+    "explicacion": "Es una variable discreta y no acotada: valores mayores que $\\lambda$ son posibles (aunque cada vez menos probables). Por eso una cantidad con tope (por ejemplo, como máximo 20 solicitudes procesadas) no es Poisson.",
+    "fuente": "Final 2026, Ej. 3c",
+    "revisada": false
+  },
+  {
+    "id": "poi-011",
+    "tema": "poisson",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Cuál es la función de probabilidad de la Poisson?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "$P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}$"
+      },
+      {
+        "id": "b",
+        "texto": "$P(X = k) = \\lambda\\,e^{-\\lambda k}$"
+      },
+      {
+        "id": "c",
+        "texto": "$P(X = k) = \\dfrac{e^{-\\lambda}\\,\\lambda^k}{k!}$"
+      },
+      {
+        "id": "d",
+        "texto": "$P(X = k) = \\dfrac{\\lambda^k}{k!}$"
+      }
+    ],
+    "respuestaCorrecta": "c",
+    "respuestaModelo": "$P(X = k) = \\dfrac{e^{-\\lambda}\\,\\lambda^k}{k!}$, para $k = 0, 1, 2, \\dots$",
+    "puntosClave": [],
+    "explicacion": "La segunda es la binomial. La última no incluye $e^{-\\lambda}$, que es el factor que hace que las probabilidades sumen 1. Notá que $P(X = 0) = e^{-\\lambda}$.",
+    "fuente": "Teoría; TP2, Ej. 10",
+    "revisada": false
+  },
+  {
+    "id": "poi-012",
+    "tema": "poisson",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Un área es afectada en promedio por 6 huracanes por año. ¿Cuál es la probabilidad de que un año sea afectada por **menos de 4** huracanes?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Aproximadamente $0{,}849$"
+      },
+      {
+        "id": "b",
+        "texto": "Aproximadamente $0{,}089$"
+      },
+      {
+        "id": "c",
+        "texto": "Aproximadamente $0{,}151$"
+      },
+      {
+        "id": "d",
+        "texto": "Aproximadamente $0{,}285$"
+      }
+    ],
+    "respuestaCorrecta": "c",
+    "respuestaModelo": "$P(X < 4) = P(X \\le 3) = e^{-6}\\left(1 + 6 + 18 + 36\\right) = 61\\,e^{-6} \\approx 0{,}151$.",
+    "puntosClave": [],
+    "explicacion": "\"Menos de 4\" es $X = 0, 1, 2$ o $3$:\n\n$$\nP(X \\le 3) = e^{-6}\\left(\\frac{6^0}{0!} + \\frac{6^1}{1!} + \\frac{6^2}{2!} + \\frac{6^3}{3!}\\right) = 61\\,e^{-6} \\approx 0{,}151\n$$\n\n$0{,}285$ incluiría $X = 4$ (\"4 o menos\") y $0{,}089$ es solo $P(X = 3)$.",
+    "fuente": "TP2, Ej. 11a",
+    "revisada": false
+  },
+  {
+    "id": "poi-013",
+    "tema": "poisson",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "En un cruce ocurren en promedio 2 accidentes por semana, de forma aleatoria e independiente. ¿Cuál es la probabilidad de que ocurra 1 accidente una semana y 3 la semana siguiente?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Aproximadamente $0{,}271$"
+      },
+      {
+        "id": "b",
+        "texto": "Aproximadamente $0{,}049$"
+      },
+      {
+        "id": "c",
+        "texto": "Aproximadamente $0{,}451$"
+      },
+      {
+        "id": "d",
+        "texto": "Aproximadamente $0{,}195$"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "Por independencia: $P(X_1 = 1)\\,P(X_2 = 3) = (2e^{-2})\\left(\\frac{8}{6}e^{-2}\\right) \\approx 0{,}271 \\cdot 0{,}180 \\approx 0{,}049$.",
+    "puntosClave": [],
+    "explicacion": "Cada semana es una Poisson con $\\lambda = 2$ y las semanas son independientes, así que se multiplican:\n\n$$\nP(X_1 = 1) = 2e^{-2} \\approx 0{,}271 \\qquad P(X_2 = 3) = \\frac{2^3 e^{-2}}{3!} \\approx 0{,}180\n$$\n\n$$\n0{,}271 \\cdot 0{,}180 \\approx 0{,}049\n$$\n\n$0{,}195$ sería $P(4$ accidentes en 2 semanas$)$ con $\\lambda = 4$, que no exige cómo se reparten.",
+    "fuente": "TP2, Ej. 16",
+    "revisada": false
+  },
+  {
+    "id": "poi-014",
+    "tema": "poisson",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "¿Cuándo se puede aproximar una distribución binomial con una Poisson? ¿Con qué parámetro y por qué funciona? Usá el ejemplo de 2000 vacunados con probabilidad $0{,}002$ de enfermarse.",
+    "respuestaModelo": "Cuando el número de ensayos $n$ es grande y la probabilidad de éxito $p$ es chica (eventos raros). Se usa $\\lambda = np$, que conserva la media. Funciona porque con $p$ chica la varianza de la binomial, $np(1-p)$, es casi igual a $np$, como en la Poisson, y con muchos ensayos la cantidad de éxitos se comporta como un conteo de eventos raros. En el ejemplo, $\\lambda = 2000 \\cdot 0{,}002 = 4$, y es más fácil calcular con Poisson que con combinatorios de 2000.",
+    "puntosClave": [
+      "Condiciones: $n$ grande y $p$ chica",
+      "Parámetro $\\lambda = np$ (conserva la media)",
+      "Con $p$ chica, $np(1-p) \\approx np$",
+      "En el ejemplo $\\lambda = 4$"
+    ],
+    "fuente": "TP2, Ej. 14",
+    "revisada": false
+  },
+  {
+    "id": "poi-015",
+    "tema": "poisson",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "Un servidor recibe en promedio 12 solicitudes por minuto. ¿Se puede modelar con Poisson la cantidad de solicitudes en 10 segundos? ¿Y la cantidad de solicitudes recibidas **hasta** que llega la primera de un usuario determinado? Justificá y, si corresponde, da el parámetro.",
+    "respuestaModelo": "Cantidad en 10 segundos: sí, es un conteo en un intervalo fijo y, si la tasa es constante, el parámetro es proporcional al intervalo: $\\lambda = 12 \\cdot \\frac{10}{60} = 2$. Cantidad hasta que llega la de un usuario: no, porque no se cuenta en un intervalo fijo; el \"intervalo\" depende de cuándo llegue esa solicitud, que es aleatorio. Esa variable responde a otro modelo (de espera hasta un evento).",
+    "puntosClave": [
+      "10 segundos: sí, conteo en intervalo fijo",
+      "$\\lambda = 12 \\cdot \\frac{10}{60} = 2$ (proporcional al intervalo)",
+      "Hasta la primera de un usuario: no es Poisson",
+      "No hay intervalo fijo: el final depende de un evento aleatorio"
+    ],
+    "fuente": "Final 2026, Ej. 3c (i y iii)",
+    "revisada": false
+  },
+  {
+    "id": "poi-016",
+    "tema": "poisson",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "¿Qué diferencias hay entre la distribución binomial y la de Poisson? ¿Cómo decidís cuál usar en un problema?",
+    "respuestaModelo": "La binomial cuenta éxitos en un número fijo $n$ de ensayos independientes con la misma probabilidad $p$; sus valores van de $0$ a $n$, su media es $np$ y su varianza $np(1-p)$. La Poisson cuenta eventos en un intervalo continuo (tiempo, espacio) a una tasa constante; no tiene un número de ensayos ni un máximo, y su media y varianza valen $\\lambda$. Para decidir: si hay ensayos que se pueden contar (motores, familias, personas), binomial; si hay eventos que ocurren a una tasa en un intervalo (llegadas, accidentes, huracanes), Poisson.",
+    "puntosClave": [
+      "Binomial: n ensayos fijos con probabilidad p",
+      "Poisson: eventos en un intervalo a tasa constante",
+      "Binomial acotada en n; Poisson sin máximo",
+      "Binomial: media $np$, varianza $np(1-p)$; Poisson: ambas $\\lambda$"
+    ],
+    "fuente": "TP2, Ej. 6–16",
+    "revisada": false
+  },
+  {
+    "id": "reg-009",
+    "tema": "regresion",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "¿Qué valores puede tomar el coeficiente de correlación de Pearson $r$ y qué indica su signo?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Entre $0$ y $1$; el signo no importa"
+      },
+      {
+        "id": "b",
+        "texto": "Entre $-1$ y $1$; el signo indica si la relación lineal es directa o inversa"
+      },
+      {
+        "id": "c",
+        "texto": "Cualquier número real; el signo indica la pendiente en unidades de $Y$"
+      },
+      {
+        "id": "d",
+        "texto": "Entre $-1$ y $1$; el signo indica si la relación es significativa"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "$-1 \\le r \\le 1$. Positivo: relación lineal directa; negativo: inversa. Cuanto más cerca de $\\pm 1$, más fuerte.",
+    "puntosClave": [],
+    "explicacion": "$r$ mide la intensidad y dirección de la relación **lineal**. $r = \\pm 1$ significa que todos los puntos están sobre una recta. Que sea significativa o no se decide con una prueba de hipótesis, no con el signo.",
+    "fuente": "TP7, Ej. 1–4",
+    "revisada": false
+  },
+  {
+    "id": "reg-010",
+    "tema": "regresion",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "Si el coeficiente de correlación entre $X$ e $Y$ es $r \\approx 0$, ¿qué se puede concluir?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Que la pendiente de la regresión es 1"
+      },
+      {
+        "id": "b",
+        "texto": "Que no hay ninguna relación entre ellas"
+      },
+      {
+        "id": "c",
+        "texto": "Que no hay relación lineal, aunque podría haber una relación no lineal"
+      },
+      {
+        "id": "d",
+        "texto": "Que las variables son independientes"
+      }
+    ],
+    "respuestaCorrecta": "c",
+    "respuestaModelo": "Que no hay relación **lineal**. Puede existir una relación curva (por ejemplo, en forma de U) que $r$ no detecta.",
+    "puntosClave": [],
+    "explicacion": "$r$ solo mide asociación lineal. Por eso siempre conviene mirar el diagrama de dispersión: una relación no lineal fuerte puede dar $r$ cercano a 0.",
+    "fuente": "Final 2022, Ej. 3; TP7",
+    "revisada": false
+  },
+  {
+    "id": "reg-011",
+    "tema": "regresion",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "Un concesionario quiere estimar el **precio de venta** de un auto usado a partir de su **antigüedad**. ¿Cuál es la variable dependiente?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "La antigüedad"
+      },
+      {
+        "id": "b",
+        "texto": "El precio de venta"
+      },
+      {
+        "id": "c",
+        "texto": "Ninguna, porque es una correlación"
+      },
+      {
+        "id": "d",
+        "texto": "Ambas"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "El precio de venta, que es lo que se quiere estimar; la antigüedad es la variable independiente (explicativa).",
+    "puntosClave": [],
+    "explicacion": "La variable dependiente ($Y$) es la que se quiere predecir o explicar; la independiente ($X$) es la que se usa para predecir. En el modelo: $\\widehat{\\text{precio}} = \\beta_0 + \\beta_1 \\cdot \\text{antigüedad}$.",
+    "fuente": "TP7, Ej. 5a",
+    "revisada": false
+  },
+  {
+    "id": "reg-012",
+    "tema": "regresion",
+    "nivel": 1,
+    "tipo": "opcion_multiple",
+    "enunciado": "En regresión lineal, ¿qué es un residuo?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "La diferencia entre $x_i$ y su media"
+      },
+      {
+        "id": "b",
+        "texto": "La parte de $Y$ explicada por el modelo"
+      },
+      {
+        "id": "c",
+        "texto": "El valor de la ordenada al origen"
+      },
+      {
+        "id": "d",
+        "texto": "La diferencia entre el valor observado y el predicho por la recta: $e_i = y_i - \\hat{y}_i$"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "$e_i = y_i - \\hat{y}_i$: lo que el modelo no logra explicar de cada observación.",
+    "puntosClave": [],
+    "explicacion": "La recta de mínimos cuadrados es la que minimiza la suma de los residuos al cuadrado. Los supuestos del modelo (normalidad, homocedasticidad, independencia) se verifican mirando los residuos.",
+    "fuente": "Final 2026, Ej. 4 (Residuals); TP7",
+    "revisada": false
+  },
+  {
+    "id": "reg-013",
+    "tema": "regresion",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Con el modelo $\\widehat{\\text{monto}} = 150{,}32 + 12{,}08 \\cdot \\text{tiempo}$, ¿qué monto medio se predice para un cliente que navega 10 minutos?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "\\$1515,28"
+      },
+      {
+        "id": "b",
+        "texto": "\\$150,32"
+      },
+      {
+        "id": "c",
+        "texto": "\\$162,40"
+      },
+      {
+        "id": "d",
+        "texto": "\\$271,12"
+      }
+    ],
+    "respuestaCorrecta": "d",
+    "respuestaModelo": "$150{,}32 + 12{,}08 \\cdot 10 = 271{,}12$.",
+    "puntosClave": [],
+    "explicacion": "Se reemplaza $x = 10$ en la recta:\n\n$$\n\\hat{y} = 150{,}32 + 12{,}08 \\cdot 10 = 271{,}12\n$$\n\nEs el monto **medio** esperado para clientes que navegan 10 minutos; con $R^2 = 0{,}145$ los montos individuales pueden alejarse mucho de esa predicción.",
+    "fuente": "Final 2026, Ej. 4a",
+    "revisada": false
+  },
+  {
+    "id": "reg-014",
+    "tema": "regresion",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "La correlación entre tiempo de recreo y nivel de estrés es $r = -0{,}921$. ¿Qué porcentaje de la variabilidad del estrés se explica linealmente por el tiempo de recreo?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Aproximadamente 85%"
+      },
+      {
+        "id": "b",
+        "texto": "No se puede saber sin la recta"
+      },
+      {
+        "id": "c",
+        "texto": "Aproximadamente 92%"
+      },
+      {
+        "id": "d",
+        "texto": "Aproximadamente 8%"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "$R^2 = r^2 = (-0{,}921)^2 \\approx 0{,}848$: alrededor del 85%.",
+    "puntosClave": [],
+    "explicacion": "En regresión lineal simple, el coeficiente de determinación es el cuadrado de la correlación:\n\n$$\nR^2 = r^2 = 0{,}921^2 \\approx 0{,}848\n$$\n\nEl signo negativo indica que la relación es inversa, pero no afecta a $R^2$.",
+    "fuente": "TP7, Ej. 4",
+    "revisada": false
+  },
+  {
+    "id": "reg-015",
+    "tema": "regresion",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "Con los datos $X = 5, 3, 6, 3, 4, 4, 6, 8$ e $Y = 13, 15, 7, 12, 13, 11, 9, 5$, ¿cómo es la relación lineal entre las variables?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "Inversa y fuerte ($r \\approx -0{,}89$)"
+      },
+      {
+        "id": "b",
+        "texto": "Inversa y débil ($r \\approx -0{,}2$)"
+      },
+      {
+        "id": "c",
+        "texto": "Directa y fuerte ($r \\approx 0{,}89$)"
+      },
+      {
+        "id": "d",
+        "texto": "No hay relación ($r \\approx 0$)"
+      }
+    ],
+    "respuestaCorrecta": "a",
+    "respuestaModelo": "Inversa y fuerte: $r \\approx -0{,}89$. Cuando $X$ aumenta, $Y$ tiende a disminuir.",
+    "puntosClave": [],
+    "explicacion": "$$\nr = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum (x_i - \\bar{x})^2 \\sum (y_i - \\bar{y})^2}} \\approx -0{,}89\n$$\n\nCon $\\bar{x} = 4{,}875$ e $\\bar{y} = 10{,}625$, los valores altos de $X$ (6, 8) van con valores bajos de $Y$ (7, 9, 5).",
+    "fuente": "TP7, Ej. 2",
+    "revisada": false
+  },
+  {
+    "id": "reg-016",
+    "tema": "regresion",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "enunciado": "La salida de una regresión dice \"Residual standard error: 210.4 on 58 degrees of freedom\". ¿Cuántas observaciones tiene el set de datos?",
+    "opciones": [
+      {
+        "id": "a",
+        "texto": "58"
+      },
+      {
+        "id": "b",
+        "texto": "60"
+      },
+      {
+        "id": "c",
+        "texto": "57"
+      },
+      {
+        "id": "d",
+        "texto": "59"
+      }
+    ],
+    "respuestaCorrecta": "b",
+    "respuestaModelo": "En regresión simple los grados de libertad residuales son $n - 2$, así que $n = 58 + 2 = 60$.",
+    "puntosClave": [],
+    "explicacion": "Se pierden 2 grados de libertad porque se estiman 2 parámetros ($\\beta_0$ y $\\beta_1$). La misma información aparece en \"F-statistic: 9.86 on 1 and 58 DF\".",
+    "fuente": "Final 2026, Ej. 4",
+    "revisada": false
+  },
+  {
+    "id": "reg-017",
+    "tema": "regresion",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "Dibujá mentalmente una relación **no lineal** entre $X$ e $Y$ (por ejemplo, una curva en forma de U). ¿Qué pasa si igual se ajusta una regresión lineal simple? ¿Cómo lo detectarías?",
+    "respuestaModelo": "La recta no describe bien los datos: puede dar una pendiente cercana a 0 y un $R^2$ bajo aunque exista una relación fuerte, y las predicciones tienen errores sistemáticos (la recta pasa por encima de los puntos en una zona y por debajo en otra). Se detecta mirando el diagrama de dispersión y, sobre todo, el gráfico de residuos contra valores predichos: en lugar de una nube sin patrón aparece una forma curva. Se viola el supuesto de linealidad.",
+    "puntosClave": [
+      "La recta no representa bien la relación",
+      "Puede dar r o R² bajos aunque la relación sea fuerte",
+      "Los residuos muestran un patrón curvo (errores sistemáticos)",
+      "Se viola el supuesto de linealidad; se detecta con el gráfico de dispersión o de residuos"
+    ],
+    "fuente": "Final 2022, Ej. 3",
+    "revisada": false
+  },
+  {
+    "id": "reg-018",
+    "tema": "regresion",
+    "nivel": 3,
+    "tipo": "abierta",
+    "enunciado": "Con el modelo de monto de compra en función del tiempo de navegación, ajustado con clientes que navegaron entre 5 y 40 minutos, ¿es razonable predecir el monto para un cliente que navega 300 minutos? Justificá.",
+    "respuestaModelo": "No es razonable: sería una extrapolación. El modelo solo describe la relación dentro del rango de los datos observados; fuera de él no sabemos si la relación sigue siendo lineal (puede estabilizarse, cambiar o dejar de tener sentido). Las predicciones lejos de la media de $X$ además son mucho más inciertas. Por la misma razón, interpretar $\\beta_0$ (tiempo 0) también es dudoso si 0 está fuera del rango.",
+    "puntosClave": [
+      "Es una extrapolación fuera del rango de los datos",
+      "No se sabe si la relación sigue siendo lineal fuera del rango",
+      "Las predicciones lejos de la media de X son más inciertas",
+      "Mismo problema que interpretar $\\beta_0$ fuera del rango"
+    ],
+    "fuente": "Final 2026, Ej. 4b",
     "revisada": false
   }
 ]
